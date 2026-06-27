@@ -16,9 +16,10 @@
   #errbox { display:none; margin:20px; padding:16px; background:#FDEDED; border:1px solid #C0392B; border-radius:10px; font-family:system-ui; color:#C0392B; font-size:13px; white-space:pre-wrap; word-break:break-word; }
   #barcode-reader video { border-radius:12px; }
 </style>
-<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
-<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+<script>window.__loadErrors = [];</script>
+<script crossorigin src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js" onerror="window.__loadErrors.push('React (jsdelivr)')"></script>
+<script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js" onerror="window.__loadErrors.push('ReactDOM (jsdelivr)')"></script>
+
 </head>
 <body>
 <div id="root"><div id="loading"><div style="font-size:32px">🌊</div><div>Catalogus laden...</div></div></div>
@@ -576,7 +577,7 @@ function App() {
     setBarcodeStatus("Camera starten...");
     setTimeout(async () => {
       if (typeof Html5Qrcode === "undefined") {
-        setBarcodeStatus("Scanner-bibliotheek niet geladen. Controleer internet.");
+        setBarcodeStatus("Scanner laadt nog of is niet beschikbaar. Wacht even of controleer je internetverbinding en probeer opnieuw.");
         return;
       }
       try {
@@ -882,10 +883,22 @@ function App() {
   }
 }
 
+
+// Load barcode scanner library separately (non-blocking - app works without it)
+(function loadBarcodeLib(){
+  var s = document.createElement("script");
+  s.src = "https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js";
+  s.onerror = function(){ window.__barcodeUnavailable = true; };
+  document.head.appendChild(s);
+})();
+
 (function waitReact(tries){
   if (typeof React !== "undefined" && typeof ReactDOM !== "undefined") { startApp(); }
   else if (tries > 0) { setTimeout(function(){ waitReact(tries-1); }, 100); }
-  else { showError("React laadt niet (geen internet?). Herlaad de pagina met verbinding."); }
+  else {
+    var errs = window.__loadErrors && window.__loadErrors.length ? "\n\nMislukt: " + window.__loadErrors.join(", ") : "";
+    showError("React laadt niet. Controleer je internetverbinding en herlaad de pagina." + errs);
+  }
 })(50);
 </script>
 </body>
