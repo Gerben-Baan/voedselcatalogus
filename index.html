@@ -516,6 +516,8 @@ function App() {
   const [imgLabel, setImgLabel] = useState(null);
   const [imgLabelRaw, setImgLabelRaw] = useState(null);
   const [scanning, setScanning] = useState(false);
+  const [barcodeOpen, setBarcodeOpen] = useState(false);
+  const [barcodeStatus, setBarcodeStatus] = useState("");
   const [scanDone, setScanDone] = useState(false);
   const [scanError, setScanError] = useState("");
   const [goalsDraft, setGoalsDraft] = useState(DEFAULT_GOALS);
