@@ -112,7 +112,8 @@ input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
 .photo-change{text-align:center;margin-top:4px;font-size:10px;color:#5D7A8A}
 
 /* ── FLOATING BUTTON ── */
-.fab{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:20px;z-index:300;background:#0A2A4A;color:#fff;border:none;border-radius:28px;padding:14px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(10,42,74,.35)}
+.fab{position:fixed;bottom:calc(28px + env(safe-area-inset-bottom));right:16px;z-index:300;background:#0A2A4A;color:#fff;border:none;border-radius:50%;width:52px;height:52px;font-size:24px;font-family:inherit;cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 16px rgba(10,42,74,.4);transition:transform 0.2s,opacity 0.2s;touch-action:pan-y}
+.fab.hidden{transform:translateX(72px);opacity:0;pointer-events:none}
 
 /* ── SNACK PANEL ── */
 .snack-timeslot{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
@@ -341,21 +342,55 @@ function generateAdvice(product, goals){
 }
 
 // ══════════════════════════════════════════════════════════════════
-// SNACK ENGINE
+// SNACK ENGINE — combinaties
 // ══════════════════════════════════════════════════════════════════
+// Vaste aanvullingen (niet uit catalogus, altijd beschikbaar)
+var EXTRAS = [
+  {name:"een handvol aardbeien",      kcal:32,  prot:0.7, cat:"fruit",    slots:["ontbijt","ochtendsnack","middagsnack"]},
+  {name:"een banaan",                  kcal:89,  prot:1.1, cat:"fruit",    slots:["ontbijt","ochtendsnack","middagsnack","avondeten"]},
+  {name:"een appel",                   kcal:52,  prot:0.3, cat:"fruit",    slots:["ochtendsnack","middagsnack","lunch"]},
+  {name:"een handvol bosbessen",       kcal:43,  prot:0.6, cat:"fruit",    slots:["ontbijt","ochtendsnack","middagsnack","avondsnack"]},
+  {name:"een paar walnoten (20g)",     kcal:131, prot:3.1, cat:"noten",    slots:["ochtendsnack","middagsnack","avondsnack"]},
+  {name:"een eetlepel amandelboter",   kcal:98,  prot:2.5, cat:"noten",    slots:["ontbijt","ochtendsnack"]},
+  {name:"een handvol amandelen (25g)", kcal:143, prot:5.3, cat:"noten",    slots:["middagsnack","avondsnack"]},
+  {name:"wat gehakte komkommer",       kcal:12,  prot:0.5, cat:"groente",  slots:["lunch","middagsnack","avondeten"]},
+  {name:"een paar cherrytomaatjes",    kcal:18,  prot:0.9, cat:"groente",  slots:["lunch","middagsnack","avondeten"]},
+  {name:"wat rauwe wortelsticks",      kcal:22,  prot:0.5, cat:"groente",  slots:["lunch","middagsnack"]},
+  {name:"een sneetje volkorenbrood",   kcal:75,  prot:3.0, cat:"granen",   slots:["ontbijt","lunch","ochtendsnack"]},
+  {name:"wat granola (30g)",           kcal:130, prot:3.5, cat:"granen",   slots:["ontbijt","ochtendsnack"]},
+  {name:"een theelepel honing",        kcal:21,  prot:0.0, cat:"zoet",     slots:["ontbijt","ochtendsnack"]},
+  {name:"wat kaneel erover",           kcal:2,   prot:0.0, cat:"smaak",    slots:["ontbijt","ochtendsnack","avondsnack"]},
+  {name:"een scheutje citroensap",     kcal:3,   prot:0.1, cat:"smaak",    slots:["lunch","middagsnack","avondeten"]},
+  {name:"wat chiazaad (10g)",          kcal:49,  prot:1.7, cat:"zaad",     slots:["ontbijt","ochtendsnack","avondsnack"]},
+  {name:"een eetlepel lijnzaad",       kcal:37,  prot:1.3, cat:"zaad",     slots:["ontbijt","ochtendsnack"]},
+  {name:"wat verse munt",              kcal:2,   prot:0.1, cat:"smaak",    slots:["avondsnack","middagsnack"]},
+];
+
 function generateSnack(products, goals){
   if(!products.length) return {error:"Voeg eerst producten toe aan je catalogus."};
   var hour=new Date().getHours();
   var slot=hour>=6&&hour<10?"ontbijt":hour>=10&&hour<12?"ochtendsnack":hour>=12&&hour<14?"lunch":hour>=14&&hour<17?"middagsnack":hour>=17&&hour<20?"avondeten":hour>=20&&hour<23?"avondsnack":"nachtsnack";
-  var catPref={ontbijt:["zuivel","granen","eiwit"],ochtendsnack:["zuivel","eiwit","groenten"],lunch:["eiwit","groenten","granen","broodbeleg"],middagsnack:["zuivel","eiwit","groenten"],avondeten:["eiwit","groenten","granen"],avondsnack:["zuivel","eiwit"],nachtsnack:["zuivel","eiwit"]}[slot]||["eiwit","zuivel"];
+
+  // Categorie voorkeur per tijdslot
+  var catPref={
+    ontbijt:["zuivel","granen","eiwit"],
+    ochtendsnack:["zuivel","eiwit","groenten"],
+    lunch:["eiwit","groenten","granen","broodbeleg"],
+    middagsnack:["zuivel","eiwit","groenten"],
+    avondeten:["eiwit","groenten","granen"],
+    avondsnack:["zuivel","eiwit"],
+    nachtsnack:["zuivel","eiwit"]
+  }[slot]||["eiwit","zuivel"];
+
+  // Macrobudget berekenen
   var mealsElapsed=Math.min(goals.mealsPerDay,hour<8?0:hour<12?1:hour<15?2:hour<19?3:goals.mealsPerDay-1);
   var mealsLeft=Math.max(1,goals.mealsPerDay-mealsElapsed);
   var actFactor=goals.activityLevel==="hoog"?1.3:goals.activityLevel==="matig"?1.15:1.0;
   var effectiveProtein=Math.round(((goals.proteinMin+goals.proteinMax)/2)*actFactor);
-  var proteinLeft=Math.round(effectiveProtein*(mealsLeft/goals.mealsPerDay));
-  var kcalLeft=Math.round(goals.kcalTarget*(mealsLeft/goals.mealsPerDay));
-  var snackProteinTarget=Math.round(proteinLeft/Math.max(1,mealsLeft));
-  var snackKcalBudget=Math.round(kcalLeft/Math.max(1,mealsLeft));
+  var snackProteinTarget=Math.round((effectiveProtein*(mealsLeft/goals.mealsPerDay))/Math.max(1,mealsLeft));
+  var snackKcalBudget=Math.round((goals.kcalTarget*(mealsLeft/goals.mealsPerDay))/Math.max(1,mealsLeft));
+
+  // Score producten uit catalogus
   var RED_E=["E102","E104","E110","E122","E124","E127","E129","E131","E133","E171","E220","E221","E249","E250","E251","E252","E320","E321","E621","E622","E627","E631","E951","E952"];
   var scored=products.map(function(p){
     var prot=parseFloat(p.protein)||0, fat=parseFloat(p.fat)||0, sugar=parseFloat(p.sugar)||0, kcal=parseFloat(p.kcal)||0;
@@ -366,22 +401,67 @@ function generateSnack(products, goals){
     if(goals.goal==="afvallen"){ if(fat>25) score-=20; if(sugar>12) score-=15; if(kcal>0&&kcal<200) score+=10; }
     else if(goals.goal==="spiermassa"){ if(prot>=15) score+=15; if(kcal>200) score+=5; }
     var ens=(p.enumbers||"").toUpperCase().match(/E\s?\d{3}[A-Z]?/g)||[];
-    var redCount=ens.filter(function(e){ return RED_E.indexOf(e.replace(/\s/g,""))>=0; }).length;
-    score-=redCount*8;
+    score-=ens.filter(function(e){ return RED_E.indexOf(e.replace(/\s/g,""))>=0; }).length*8;
     if((slot==="avondsnack"||slot==="nachtsnack")&&kcal>300) score-=10;
     return Object.assign({},p,{_score:score});
   });
   scored.sort(function(a,b){ return b._score-a._score; });
   var top=scored.slice(0,Math.min(3,scored.length));
   var pick=top[Math.floor(Math.random()*top.length)];
+
+  // Portie berekenen voor basis
   var prot=parseFloat(pick.protein)||0;
-  var portie=prot>0?Math.round((snackProteinTarget/prot)*100):100;
-  portie=Math.max(30,Math.min(500,portie));
-  var portieKcal=pick.kcal>0?Math.round((portie/100)*pick.kcal):null;
-  var portieProt=prot>0?Math.round((portie/100)*prot):null;
+  var portie=prot>0?Math.round((snackProteinTarget/prot)*100):150;
+  portie=Math.max(50,Math.min(400,portie));
+  var portieKcal=pick.kcal>0?Math.round((portie/100)*pick.kcal):0;
+  var portieProt=prot>0?Math.round((portie/100)*prot):0;
+
+  // Kies een passende aanvulling
+  var extraPool=EXTRAS.filter(function(e){ return e.slots.indexOf(slot)>=0; });
+  // Stuur aan op kcal resterende ruimte
+  var kcalLeft=snackKcalBudget-portieKcal;
+  if(goals.goal==="afvallen"&&kcalLeft<50) extraPool=extraPool.filter(function(e){ return e.kcal<50; });
+  else if(goals.goal==="spiermassa")       extraPool=extraPool.filter(function(e){ return e.prot>1; });
+
+  // Kies extra passend bij categorie basis
+  var extra=null;
+  if(extraPool.length){
+    // Vermijd zoet bij avond
+    if(slot==="avondsnack"||slot==="nachtsnack") extraPool=extraPool.filter(function(e){ return e.cat!=="zoet"; })||extraPool;
+    // Combineer zuivel graag met fruit of zaad
+    if(pick.cat==="zuivel"||pick.cat==="eiwit"){
+      var fruity=extraPool.filter(function(e){ return e.cat==="fruit"||e.cat==="zaad"; });
+      if(fruity.length) extraPool=fruity;
+    }
+    // Granen combineren met fruit of noten
+    if(pick.cat==="granen"){
+      var fruitNoot=extraPool.filter(function(e){ return e.cat==="fruit"||e.cat==="noten"; });
+      if(fruitNoot.length) extraPool=fruitNoot;
+    }
+    extra=extraPool[Math.floor(Math.random()*extraPool.length)];
+  }
+
+  // Totale macros combinatie
+  var totaalKcal=portieKcal+(extra?extra.kcal:0);
+  var totaalProt=portieProt+(extra?Math.round(extra.prot):0);
+
+  // Beschrijving combinatie
+  var basis=portie+"g "+pick.name+(pick.brand?" ("+pick.brand+")":"");
+  var combinatie=extra?basis+" met "+extra.name:basis;
+
+  // Bereidingstip
+  var tip="";
+  if(pick.cat==="zuivel"&&extra&&extra.cat==="fruit") tip="Schep de "+pick.name.toLowerCase()+" in een kom en leg het fruit er bovenop.";
+  else if(pick.cat==="zuivel"&&extra&&extra.cat==="zaad") tip="Meng de "+pick.name.toLowerCase()+" en strooi het zaad er doorheen.";
+  else if(pick.cat==="granen"&&extra&&extra.cat==="fruit") tip="Combineer de granen met het fruit voor extra smaak en vezels.";
+  else if(pick.cat==="eiwit"&&extra&&extra.cat==="groente") tip="Serveer het vlees/vis met de groente als lichte maaltijd.";
+  else if(extra&&extra.cat==="noten") tip="Eet de noten als crunch erbij — ook goed voor gezonde vetten.";
+  else if(extra&&extra.cat==="smaak") tip="Voeg "+extra.name+" toe voor extra smaak zonder veel calorieën.";
+
+  var fitMsg=goals.goal==="afvallen"?"Past bij afvallen: "+totaalKcal+" kcal en "+totaalProt+"g eiwit.":goals.goal==="spiermassa"?"Goed voor spiermassa: "+totaalProt+"g eiwit in deze combinatie.":"Evenwichtige snack: "+totaalKcal+" kcal · "+totaalProt+"g eiwit.";
+
   var slotLabel={ontbijt:"ontbijt",ochtendsnack:"ochtendsnack",lunch:"lunch",middagsnack:"middagsnack",avondeten:"avondeten",avondsnack:"avondsnack",nachtsnack:"late snack"}[slot];
-  var fitMsg=goals.goal==="afvallen"?"Past bij afvallen: beperkt in calorieën en levert goed eiwit.":goals.goal==="spiermassa"?"Goed voor spiermassa: hoog eiwit ondersteunt spierherstel.":"Goede keuze voor onderhoud: evenwichtige macro's.";
-  return {pick:pick,portie:portie,portieKcal:portieKcal,portieProt:portieProt,slotLabel:slotLabel,snackKcalBudget:snackKcalBudget,snackProteinTarget:snackProteinTarget,fitMsg:fitMsg,hour:hour,top:top};
+  return {pick:pick,portie:portie,extra:extra,combinatie:combinatie,portieKcal:portieKcal,portieProt:portieProt,totaalKcal:totaalKcal,totaalProt:totaalProt,tip:tip,slotLabel:slotLabel,snackKcalBudget:snackKcalBudget,snackProteinTarget:snackProteinTarget,fitMsg:fitMsg,hour:hour,top:top};
 }
 
 // ══════════════════════════════════════════════════════════════════
@@ -1041,12 +1121,32 @@ function renderSnackPanel(){
     return panel;
   }
   var p=sr.pick;
-  var topRow=div("snack-timeslot",[
+
+  // Header
+  panel.appendChild(div("snack-timeslot",[
     div("snack-timeslot-label",["🕐 "+sr.slotLabel+" · "+sr.hour+":00 uur"]),
     h("button",{className:"snack-close",onClick:function(){ setState({snackOpen:false}); }},["✕"])
-  ]);
-  panel.appendChild(topRow);
-  panel.appendChild(div("snack-title",["Aanbevolen snack"]));
+  ]));
+  panel.appendChild(div("snack-title",["Snack suggestie"]));
+
+  // Combinatie headline
+  var combo=h("div",{style:{background:"#0A2A4A",borderRadius:"12px",padding:"14px 16px",marginBottom:"14px"}});
+  combo.appendChild(h("div",{style:{fontSize:"11px",color:"#5DADE2",fontWeight:"600",textTransform:"uppercase",letterSpacing:"1px",marginBottom:"6px"}},["🍽️ Jouw combinatie"]));
+  combo.appendChild(h("div",{style:{fontSize:"16px",fontWeight:"700",color:"#fff",lineHeight:"1.5"}},[sr.combinatie]));
+  if(sr.tip) combo.appendChild(h("div",{style:{fontSize:"11px",color:"rgba(255,255,255,0.65)",marginTop:"6px",lineHeight:"1.5"}},[sr.tip]));
+  panel.appendChild(combo);
+
+  // Totaal macros
+  var macroRow=h("div",{style:{display:"flex",gap:"8px",marginBottom:"14px"}});
+  [["⚡ "+sr.totaalKcal+" kcal","Totaal"],["💪 "+sr.totaalProt+"g","Eiwit"],["🎯 "+sr.snackKcalBudget+" kcal","Budget"]].forEach(function(m){
+    var cell=h("div",{style:{flex:"1",background:"#EBF5FB",borderRadius:"8px",padding:"8px 6px",textAlign:"center"}});
+    cell.appendChild(h("div",{style:{fontSize:"13px",fontWeight:"700",color:"#0A2A4A"}},[m[0]]));
+    cell.appendChild(h("div",{style:{fontSize:"9px",color:"#5D7A8A",marginTop:"2px"}},[m[1]]));
+    macroRow.appendChild(cell);
+  });
+  panel.appendChild(macroRow);
+
+  // Basis product kaartje
   var card=div("snack-card");
   if(p.imgFront) card.appendChild(h("img",{src:p.imgFront,className:"snack-card-img"}));
   var cardBody=div("snack-card-body");
@@ -1058,16 +1158,29 @@ function renderSnackPanel(){
     h("div",null,[
       sr.portieProt!=null?div("snack-portie-prot",["→ "+sr.portieProt+"g eiwit"]):"",
       sr.portieKcal!=null?div("snack-portie-kcal",["→ "+sr.portieKcal+" kcal"]):"",
-      div("snack-portie-budget",["Budget: "+sr.snackKcalBudget+" kcal / "+sr.snackProteinTarget+"g eiwit"])
     ])
   ]);
   cardBody.appendChild(portieBox);
+
+  // Aanvulling tonen
+  if(sr.extra){
+    var extraBox=h("div",{style:{background:"rgba(255,255,255,0.7)",borderRadius:"8px",padding:"8px 11px",display:"flex",alignItems:"center",gap:"8px"}});
+    extraBox.appendChild(h("span",{style:{fontSize:"18px"}},["+"]) );
+    extraBox.appendChild(h("div",null,[
+      h("div",{style:{fontSize:"12px",fontWeight:"600",color:"#0A2A4A"}},[sr.extra.name]),
+      h("div",{style:{fontSize:"10px",color:"#5D7A8A"}},["~"+sr.extra.kcal+" kcal · "+sr.extra.prot+"g eiwit"])
+    ]));
+    cardBody.appendChild(extraBox);
+  }
+
   cardBody.appendChild(div("snack-reason",["💡 "+sr.fitMsg]));
   card.appendChild(cardBody);
   panel.appendChild(card);
+
+  // Alternatieven
   var alts=sr.top.filter(function(a){ return a.id!==p.id; });
   if(alts.length){
-    panel.appendChild(div("alt-title",["Ook geschikt:"]));
+    panel.appendChild(div("alt-title",["Andere basis uit je catalogus:"]));
     alts.forEach(function(alt){
       var item=div("alt-item");
       item.addEventListener("click",function(){ pickAlt(alt); });
@@ -1077,8 +1190,9 @@ function renderSnackPanel(){
       panel.appendChild(item);
     });
   }
+
   var btnRow=div("btn-group");
-  btnRow.appendChild(h("button",{className:"btn btn-mint",style:{flex:"1"},onClick:doSnack},["🔄 Andere suggestie"]));
+  btnRow.appendChild(h("button",{className:"btn btn-mint",style:{flex:"1"},onClick:doSnack},["🔄 Andere combinatie"]));
   btnRow.appendChild(h("button",{className:"btn btn-primary",style:{flex:"1"},onClick:function(){ setState({snackOpen:false}); }},["✓ Klaar"]));
   panel.appendChild(btnRow);
   return panel;
@@ -1171,8 +1285,21 @@ function render(){
   grid.appendChild(addCard);
   app.appendChild(grid);
 
-  // ── FLOATING BUTTON ──
-  var fab=h("button",{className:"fab",onClick:doSnack},["🍎 Stel snack voor"]);
+  // ── FLOATING BUTTON met swipe ──
+  var fab=h("button",{className:"fab",id:"fab-snack",title:"Stel snack voor",onClick:doSnack},["🍎"]);
+  // Swipe-rechts om te verbergen, tik links van scherm om terug te halen
+  var fabHidden=false, touchStartX=0;
+  fab.addEventListener("touchstart",function(e){ touchStartX=e.touches[0].clientX; },{passive:true});
+  fab.addEventListener("touchend",function(e){
+    var dx=e.changedTouches[0].clientX-touchStartX;
+    if(dx>40){ fab.classList.add("hidden"); fabHidden=true; }
+  },{passive:true});
+  // Tik op linkerrand scherm om fab terug te halen
+  document.addEventListener("touchend",function(e){
+    if(fabHidden&&e.changedTouches[0].clientX<40){
+      fab.classList.remove("hidden"); fabHidden=false;
+    }
+  },{passive:true,once:false});
   app.appendChild(fab);
 
   // ── OVERLAYS ──
