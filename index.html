@@ -7,54 +7,181 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="ProteinCheck">
 <meta name="theme-color" content="#0A2A4A">
-<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAGhUlEQVR4nG1WXYxdVRX+vnX2nXtnLtNOoaVpq6AVpFSllVKLoiWmDUZEFB8xxNgH8EXiA0ExPCgBQ2KsUcQ0poFIiDRKGps0aQNUJSpNxTSpLYK2jSUDFkp/ZoaZzr33nLU+H/Y502njfrh3n5t71l5rfT9r0774HQIgIREA0SxCURQFycojJJKkQTLDUGsIxvCKNJjBDCQBQAItFdOzgzvXr9r54NcTJEkkAArIj6CZEVJ/YhJmnYULhocSSUgA+oPB9LmzsDQy2qUhJEbkpESADOfwUNp78I0/v/6fBKkOmrOGJFihalBCunPjurs3r197zQdHh9tmJoWEmf7g8LHxHS8f/P2B11ViuNN29/ptM4AIL4znHXsOHU8KEcpxiQBoReGzvbHh1lMP33vXLTfg/61rV1z5tVvXvXTwjW9ufe6dielOqwgJICQpV2MIP/72u4aoEIGmO1SgLLudoV2P33/XLTdU7lXl7lFWnvtTVl65e0RZ+eYbV+959Ftj7VY5GFCCAhEIR7giUJZVr2cIQUKIIUhG+uTkQ/fcvnHNR/uD0kgaSbRSMdHrn3p/ppWKwigpFTYoq49/aNmPttzRP98ngBAiOC8aASMEBeRQmFT2B1csXXTflz4bUquVSBZmAp7Z/4+bHn167SPbn9j3t14VqSgAtFLhEfds3nDd1cvOz/YIyEPuUCgcXincFMonI8IAzPY2fnL14rFRhSAA2H9s/HM/3PaNJ397/K2TJ89M3P/07g0P/2Lfa8cASohQp93atOaamO1TUm5O3aggYFRA0RBJKAfXrVgiwSNCQXLriwf2HznRGekUZgXR6bYP//vNx3f9gYQkAgJWLl+MCEXk6M0ZASGhJiiQm+hVJ5EEG8WNGKyd3CPCIVakdS/rdkcACJk6MAjuilAIzLUREZASMqsENjKYU3LeMgJVCW8hAiAYiJDHpczNPVCWPEDLCjNkDNTUJVnzRq5hpl/G9HkCFIgwKqYmp6Ym50XG9EwPc81RSFIIEQo3hKRAZnHe1H5EM5P07dtuXn/91YOpqYiIQTmYmPrEtR948CubJZA0gsTBo+MgFV7XMQ+MpHCSNWOEfH5OzYySNq7+yCs/fuCZl//+g537er3e97+66b7bPjPcSlGbo42/c/qPrx6xzpB7SCIZOccINRgQUjZURNSoZPcA3KMwbPn8p768bnUZWj42qlDlTtI9hlrpJztemDwz0V446j6XK7OqKdVm1xgtEOI8WgEgEQGPasloF2S/rAwkZWZFK/1mz1+efG5v67JuVXlN3NqYCUVEJERkK89uBEXe5k+S2eeLosa+3Up5MyirJ3a88L2fPatUIHyOiRBAoaFPMw/qrqPGZx73Jt8/f/zE2yRIcwWEydn+gSNHd+z96+F/jVt3hFTkLCWQmjN9BaCEiAuUDCB8TgrukVLx0E9/ve2pnWnRmLtLARoCKCsMt1N3OFRJRCNrKucPSQjVIBOoNU8immqadXZqBq0hFAUAMiHba7cDMNwBKGuKaLhIMFeRlRwhgGSDQY05myGbUqrNS0FQYmTczUiKhAIEleMSEARFHSohlAdRZv4cyDXbALkjAiGoHns1pyPyPSCTQWSmO3MFEiLIS8wu22rUFdRmhrryzDc1Wc6TCvNJaDxSORQgIV14H8j6JlC5l1XVaQ+R+OfRN5FMEfmfbCoDhNyW/JWhNlNdvCHCFKnuByCJRkTQilQUeWY99ssdhw4ds24n3HEJ+mDTSNYihRCqwTYi4sPLFifWJgUC7s4FC7c//9L4+FtgOnJs/JVXX+NIW+6iWNNwjuo5+EX9IiEQZLgj2aYNa4iVXyhaFiHQAMKoQR8zs7CEZDbSySOkjjV398uQkk3L6kmSD0hDrerc5Kc3XP/i9sfSlQvbp06eay0aiwyvV5aSXX45ACncw5oEm2mkOu0snwug50HCVBTl5PSCBSNbH9gyMjJsu371yNq1q8qz0z7bj6oKD/coy0E5GFRlpaiXQuEuj3xvCHdVLveIUPN7eERvUL53+uqlC3/38+/efOPHKg8qqlOnz257dvfzu/904r/vDWSaT1zgIh5fuB4LJGiyuVGrdsGrli+549ab7r779pVXrSgdrVSwqiopUsEzZyZOvnu6N6ikem5kenGOMHnTSIMEYCGR2SbQHkorli5efMWiKgRYKkwAI0KCu5MoCsPF6c/j/AWWzt+j1mQ9RNxDQlEYm1vJ/wDTcd+nNtnWFgAAAABJRU5ErkJggg==">
-<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAABtPElEQVR4nKW9ebx9R1Un+l279znn3vu7ubckJCQhgYSQkBACJCQgICAgICDIKDKDIDKLIDLJKDIIoiKiiHNXVJxQ0bbb7Wm3bbsd27YdW7fbsWvbsWvbsWvbsWvbsWvbsWvbsWvb+T7vvXfPufe+9957b8/PH6nUqarTtarOqlOn3qNde+d/gJkBAAQAAAIAAAIAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA">
 <title>ProteinCheck</title>
 <style>
-  * { -webkit-tap-highlight-color: transparent; }
-  html, body { margin:0; padding:0; background:#0A2A4A; overscroll-behavior:none; }
-  #root { background:#F4F8FB; }
-  #root { min-height:100vh; }
-  #loading { display:flex; flex-direction:column; align-items:center; justify-content:center; height:100vh; font-family:system-ui; color:#5D7A8A; gap:12px; }
-  #errbox { display:none; margin:20px; padding:16px; background:#FDEDED; border:1px solid #C0392B; border-radius:10px; font-family:system-ui; color:#C0392B; font-size:13px; white-space:pre-wrap; word-break:break-word; }
-  #barcode-reader video { border-radius:12px; }
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0}
+html,body{background:#0A2A4A;overscroll-behavior:none;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{background:#F4F8FB;min-height:100vh}
+input,select,button{font-family:inherit}
+input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none}
+
+/* ── LAYOUT ── */
+#app{min-height:100vh;background:#F4F8FB;color:#1E1E1E}
+.header{background:#0A2A4A;padding:calc(14px + env(safe-area-inset-top)) 18px 12px;position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:space-between}
+.header-title{font-size:19px;font-weight:700;color:#fff;display:flex;align-items:center;gap:9px}
+.header-sub{font-size:11px;color:#5DADE2;margin-top:1px;letter-spacing:.3px}
+.stats-bar{background:#0A2A4A;display:flex;border-top:1px solid rgba(255,255,255,.1)}
+.stat{flex:1;padding:8px 4px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
+.stat:last-child{border-right:none}
+.stat-num{font-size:13px;font-weight:700;color:#5DADE2;line-height:1.2}
+.stat-num.small{font-size:9px}
+.stat-lbl{font-size:9px;color:rgba(255,255,255,.6);margin-top:1px}
+.filter-bar{display:flex;gap:7px;padding:11px 13px;background:#fff;border-bottom:1px solid #C8DCE8;flex-wrap:wrap;align-items:center}
+.filter-btn{padding:5px 11px;border-radius:20px;border:1.5px solid #C8DCE8;background:#F4F8FB;color:#5D7A8A;font-size:11px;font-weight:500;cursor:pointer}
+.filter-btn.active{background:#0A2A4A;border-color:#0A2A4A;color:#fff}
+#search-input{margin-left:auto;padding:6px 11px;border:1.5px solid #C8DCE8;border-radius:20px;font-size:12px;background:#F4F8FB;outline:none;width:130px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px;padding:14px 14px 100px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 8px rgba(26,77,46,.10);border:1px solid #C8DCE8;cursor:pointer;display:flex;flex-direction:column}
+.card-img{width:100%;height:145px;object-fit:cover}
+.card-emoji{width:100%;height:145px;display:flex;align-items:center;justify-content:center;font-size:42px;background:#EBF5FB}
+.card-bar{height:3px}
+.card-body{padding:10px;flex:1;display:flex;flex-direction:column;gap:4px}
+.card-cat{font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:#5D7A8A}
+.card-name{font-size:14px;font-weight:700;color:#0A2A4A;line-height:1.2}
+.card-prot{display:inline-flex;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;width:fit-content;margin-top:2px}
+.card-macros{display:flex;gap:4px;margin-top:3px}
+.macro-box{flex:1;background:#EBF5FB;border-radius:5px;padding:3px 4px;text-align:center}
+.macro-lbl{font-size:8px;color:#5D7A8A}
+.macro-val{font-size:10px;font-weight:700}
+.card-use{font-size:10px;color:#1A5276;font-weight:500;margin-top:2px}
+.e-badges{display:flex;gap:4px;margin-top:4px}
+.e-badge{font-size:9px;font-weight:700;color:#fff;border-radius:10px;padding:1px 7px}
+.add-card{background:#EAF4FB;border:2px dashed #5DADE2;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;min-height:260px;cursor:pointer;color:#1A5276;font-size:13px;font-weight:600}
+
+/* ── OVERLAYS ── */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:200;display:flex;align-items:center;justify-content:center;padding:16px}
+.overlay.bottom{align-items:flex-end;padding:0 0 env(safe-area-inset-bottom)}
+.panel{background:#fff;border-radius:16px;width:100%;max-width:440px;max-height:92vh;overflow-y:auto;padding:20px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.panel-bottom{background:#fff;border-radius:20px 20px 0 0;width:100%;max-width:480px;max-height:82vh;overflow-y:auto;padding:24px;box-shadow:0 -8px 40px rgba(0,0,0,.2)}
+.panel-title{font-size:18px;font-weight:700;color:#0A2A4A;margin-bottom:4px}
+.panel-sub{font-size:12px;color:#5D7A8A;margin-bottom:16px}
+
+/* ── FORM ── */
+.field{margin-bottom:10px}
+.field-label{font-size:10px;font-weight:600;color:#5D7A8A;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.inp{width:100%;padding:8px 10px;border:1.5px solid #C8DCE8;border-radius:7px;font-size:13px;background:#F4F8FB;outline:none}
+.inp:focus{border-color:#5DADE2}
+.inp-sm{padding:7px 8px}
+.grid-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.section-box{background:#EBF5FB;border-radius:10px;padding:12px 14px;margin-bottom:10px}
+.section-title{font-size:11px;font-weight:700;color:#0A2A4A;margin-bottom:8px}
+
+/* ── BUTTONS ── */
+.btn{padding:10px 16px;border:none;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;font-weight:600}
+.btn-primary{background:#0A2A4A;color:#fff;width:100%}
+.btn-primary:disabled{background:#ccc;cursor:default}
+.btn-secondary{background:#EBF5FB;color:#5D7A8A}
+.btn-mint{background:#EAF4FB;color:#0A2A4A;border:1.5px solid #5DADE2}
+.btn-danger{background:#fff0ee;color:#c0392b;border:1.5px solid #fad7d2}
+.btn-group{display:flex;gap:8px;margin-top:16px}
+.goal-btn{flex:1;padding:9px 4px;border-radius:8px;border:2px solid #C8DCE8;background:#F4F8FB;color:#5D7A8A;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit}
+.goal-btn.active{border-color:#0A2A4A;background:#EAF4FB;color:#0A2A4A}
+.meal-btn{flex:1;padding:9px 4px;border-radius:8px;border:2px solid #C8DCE8;background:#F4F8FB;color:#5D7A8A;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.meal-btn.active{border-color:#0A2A4A;background:#EAF4FB;color:#0A2A4A}
+
+/* ── DETAIL ── */
+.detail-hero{width:100%;height:190px;object-fit:cover;border-radius:10px;cursor:zoom-in;display:block;margin-bottom:12px}
+.detail-cat{font-size:10px;font-weight:600;color:#5D7A8A;text-transform:uppercase;letter-spacing:1px}
+.detail-name{font-size:18px;font-weight:700;color:#0A2A4A;margin:5px 0 10px}
+.detail-prot-badge{display:inline-flex;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;margin-bottom:12px}
+.macro-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:7px;margin-bottom:12px}
+.macro-cell{background:#EBF5FB;border-radius:7px;padding:8px 4px;text-align:center}
+.macro-cell-val{font-size:15px;font-weight:700}
+.macro-cell-lbl{font-size:9px;color:#5D7A8A;margin-top:2px}
+.advice-box{background:#EAF4FB;border:1px solid #5DADE2;border-radius:9px;padding:11px 13px;margin-bottom:12px}
+.advice-title{font-size:11px;font-weight:700;color:#0A2A4A;margin-bottom:8px}
+.advice-line{font-size:12px;color:#1A3A5A;line-height:1.6;padding:3px 6px;margin-bottom:2px;border-radius:5px}
+.advice-warn{background:#fff5f5}
+.advice-good{background:#f0faf4}
+.e-block{border-radius:9px;padding:11px 13px;margin-bottom:12px}
+.e-row{display:flex;align-items:flex-start;gap:7px;margin-bottom:4px}
+.e-dot{width:9px;height:9px;border-radius:50%;margin-top:3px;flex-shrink:0}
+.e-name{font-size:12px}
+.e-desc{font-size:11px;color:#5D7A8A;line-height:1.4}
+
+/* ── PHOTO SLOTS ── */
+.photo-slots{display:flex;gap:10px;margin-bottom:14px}
+.photo-slot{flex:1;display:flex;flex-direction:column;gap:6px}
+.photo-slot-label{font-size:10px;font-weight:700;color:#0A2A4A;text-transform:uppercase;letter-spacing:.5px}
+.photo-preview{width:100%;height:130px;object-fit:cover;border-radius:8px;border:2px solid #5DADE2;display:block}
+.photo-hint{border:2px dashed #5DADE2;border-radius:8px;height:130px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;background:#EAF4FB;color:#1A5276;cursor:pointer}
+.photo-hint-icon{font-size:24px}
+.photo-hint-text{font-size:11px;font-weight:600}
+.photo-hint-sub{font-size:10px;color:#5D7A8A;text-align:center;padding:0 8px}
+.photo-change{text-align:center;margin-top:4px;font-size:10px;color:#5D7A8A}
+
+/* ── FLOATING BUTTON ── */
+.fab{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));right:20px;z-index:300;background:#0A2A4A;color:#fff;border:none;border-radius:28px;padding:14px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;display:flex;align-items:center;gap:8px;box-shadow:0 6px 24px rgba(10,42,74,.35)}
+
+/* ── SNACK PANEL ── */
+.snack-timeslot{display:flex;align-items:center;justify-content:space-between;margin-bottom:4px}
+.snack-timeslot-label{font-size:11px;font-weight:600;color:#5D7A8A;text-transform:uppercase;letter-spacing:1px}
+.snack-close{background:none;border:none;font-size:20px;cursor:pointer;color:#5D7A8A;line-height:1}
+.snack-title{font-size:18px;font-weight:700;color:#0A2A4A;margin-bottom:16px}
+.snack-card{background:#EAF4FB;border:1.5px solid #5DADE2;border-radius:14px;overflow:hidden;margin-bottom:16px}
+.snack-card-img{width:100%;height:160px;object-fit:cover;display:block}
+.snack-card-body{padding:14px 16px}
+.snack-card-cat{font-size:10px;font-weight:600;color:#5D7A8A;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+.snack-card-name{font-size:20px;font-weight:700;color:#0A2A4A;margin-bottom:2px}
+.snack-card-brand{font-size:12px;color:#5D7A8A;margin-bottom:10px}
+.snack-portie{background:#0A2A4A;border-radius:10px;padding:12px 16px;margin-bottom:12px;display:flex;align-items:center;gap:14px}
+.snack-portie-gram{font-size:36px;font-weight:900;color:#fff;line-height:1}
+.snack-portie-prot{font-size:13px;color:#5DADE2;font-weight:700}
+.snack-portie-kcal{font-size:12px;color:rgba(255,255,255,.7)}
+.snack-portie-budget{font-size:11px;color:rgba(255,255,255,.6);margin-top:2px}
+.snack-reason{font-size:12px;color:#0A2A4A;line-height:1.6;background:rgba(255,255,255,.7);border-radius:8px;padding:9px 11px}
+.alt-title{font-size:11px;font-weight:600;color:#5D7A8A;text-transform:uppercase;letter-spacing:.8px;margin-bottom:8px}
+.alt-item{background:#EBF5FB;border:1px solid #C8DCE8;border-radius:10px;padding:10px 14px;display:flex;align-items:center;gap:12px;cursor:pointer;margin-bottom:6px}
+.alt-img{width:44px;height:44px;object-fit:cover;border-radius:8px;flex-shrink:0}
+.alt-emoji{width:44px;height:44px;background:#EAF4FB;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.alt-name{font-size:13px;font-weight:700;color:#0A2A4A}
+.alt-sub{font-size:11px;color:#5D7A8A}
+
+/* ── LIGHTBOX ── */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:999;display:flex;align-items:center;justify-content:center;padding:16px;cursor:pointer}
+.lightbox img{max-width:100%;max-height:100%;border-radius:10px;object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:20px;color:#fff;font-size:28px;line-height:1}
+
+/* ── BARCODE ── */
+.barcode-overlay{position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:1000;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px}
+#barcode-reader{width:100%;max-width:340px;border-radius:12px;overflow:hidden;background:#000}
+#barcode-reader video{border-radius:12px}
+.barcode-status{color:#fff;font-size:13px;margin-top:16px;text-align:center;max-width:320px;line-height:1.5}
+
+/* ── MISC ── */
+.summary-box{background:#EAF4FB;border-radius:8px;padding:10px 12px;font-size:12px;color:#0A2A4A;line-height:1.7;margin-top:10px}
+.backup-msg{font-size:11px;margin-top:10px;line-height:1.5}
+.save-err{background:#fff0ee;color:#c0392b;padding:8px 14px;font-size:12px}
+.hint{font-size:10px;color:#5D7A8A;margin-top:6px;line-height:1.5}
+.scan-ok{background:#EAF4FB;border:1px solid #5DADE2;border-radius:8px;padding:8px 12px;margin-bottom:12px;font-size:12px;color:#0A2A4A}
+.scan-err{background:#fff0ee;border:1px solid #fad7d2;border-radius:8px;padding:8px 12px;margin-bottom:12px;font-size:12px;color:#c0392b}
+.e-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.e-tag{display:flex;align-items:center;gap:4px;border-radius:6px;padding:3px 7px;font-size:11px;border:1px solid}
+.e-tag-dot{width:7px;height:7px;border-radius:50%}
+.divider{margin-top:20px;padding-top:16px;border-top:1px solid #C8DCE8}
 </style>
-<script>window.__loadErrors = [];</script>
-<script crossorigin src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js" onerror="window.__loadErrors.push('React (jsdelivr)')"></script>
-<script crossorigin src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js" onerror="window.__loadErrors.push('ReactDOM (jsdelivr)')"></script>
 </head>
 <body>
-<div id="root"><div id="loading"><div style="font-size:32px">🌿</div><div>Catalogus laden...</div></div></div>
-<div id="errbox"></div>
+<div id="app"></div>
+
 <script>
-function showError(msg) {
-  var e = document.getElementById("errbox");
-  if (e) { e.style.display = "block"; e.textContent = "Fout bij laden:\n" + msg; }
-  var l = document.getElementById("loading");
-  if (l) l.style.display = "none";
-}
-window.addEventListener("error", function(ev){ showError(ev.message + (ev.filename? " ("+ev.lineno+")":"")); });
-
-function startApp() {
-  if (typeof React === "undefined" || typeof ReactDOM === "undefined") {
-    showError("React kon niet laden. Controleer je internetverbinding en herlaad de pagina.");
-    return;
-  }
-  try {
-const { useState, useEffect, useRef } = React;
+// ══════════════════════════════════════════════════════════════════
+// STORAGE
+// ══════════════════════════════════════════════════════════════════
 const storage = {
-  async get(key) {
-    try { const v = localStorage.getItem(key); return v !== null ? { value: v } : null; } catch (e) { return null; }
-  },
-  async set(key, value) {
-    try { localStorage.setItem(key, value); return { ok: true }; } catch (e) { return null; }
-  }
+  get(key){ try{ const v=localStorage.getItem(key); return v!==null?{value:v}:null; }catch(e){ return null; } },
+  set(key,value){ try{ localStorage.setItem(key,value); return true; }catch(e){ return false; } }
 };
 
+// ══════════════════════════════════════════════════════════════════
+// DATA
+// ══════════════════════════════════════════════════════════════════
 const CAT_LABELS = {
-  zuivel: "🥛 Zuivel", eiwit: "💪 Eiwitbron", broodbeleg: "🥪 Broodbeleg",
-  groenten: "🥦 Groenten", granen: "🌾 Granen", overig: "🫙 Overig"
+  zuivel:"🥛 Zuivel", eiwit:"💪 Eiwitbron", broodbeleg:"🥪 Broodbeleg",
+  groenten:"🥦 Groenten", granen:"🌾 Granen", overig:"🫙 Overig"
 };
+const CAT_KEYS = Object.keys(CAT_LABELS);
 
 const E_NUMBERS = {
   "E100":["Curcumine","green","Natuurlijke kleurstof (kurkuma)"],
@@ -121,7 +248,7 @@ const E_NUMBERS = {
   "E472e":["Esters van vetzuren","yellow","Emulgator"],
   "E500":["Natriumcarbonaat","yellow","Rijsmiddel, matig"],
   "E503":["Ammoniumcarbonaat","yellow","Rijsmiddel"],
-  "E621":["Mononatriumglutamaat (MSG)","red","Smaakversterker, gevoeligheidsreacties"],
+  "E621":["MSG","red","Smaakversterker, gevoeligheidsreacties"],
   "E622":["Monokaliumglutamaat","red","Smaakversterker"],
   "E627":["Dinatriumguanylaat","red","Smaakversterker"],
   "E631":["Dinatriuminosinaat","red","Smaakversterker"],
@@ -135,975 +262,945 @@ const E_NUMBERS = {
   "E967":["Xylitol","yellow","Zoetstof, laxerend (giftig voor honden)"]
 };
 
-function parseENumbers(str) {
-  if (!str) return [];
-  const matches = (str.toUpperCase().match(/E\s?\d{3}[A-Z]?/g)||[]).map(m=>m.replace(/\s/g,""));
-  return [...new Set(matches)].map(code => {
-    const info = E_NUMBERS[code];
-    if (info) return { code, name:info[0], rating:info[1], desc:info[2] };
-    return { code, name:"Onbekend", rating:"unknown", desc:"Niet in database" };
+function parseENumbers(str){
+  if(!str) return [];
+  const matches=(str.toUpperCase().match(/E\s?\d{3}[A-Z]?/g)||[]).map(function(m){return m.replace(/\s/g,"");});
+  const seen={};
+  return matches.filter(function(c){ return seen[c]?false:(seen[c]=true); }).map(function(code){
+    const info=E_NUMBERS[code];
+    return info?{code:code,name:info[0],rating:info[1],desc:info[2]}:{code:code,name:"Onbekend",rating:"unknown",desc:"Niet in database"};
   });
 }
-function eRatingColor(r){ return r==="green"?"#2E8B57":r==="yellow"?"#D4A017":r==="red"?"#C0392B":"#999"; }
-function eRatingLabel(r){ return r==="green"?"Veilig":r==="yellow"?"Matig":r==="red"?"Vermijden":"Onbekend"; }
+function eColor(r){ return r==="green"?"#2E8B57":r==="yellow"?"#D4A017":r==="red"?"#C0392B":"#999"; }
+function eLabel(r){ return r==="green"?"Veilig":r==="yellow"?"Matig":r==="red"?"Vermijden":"Onbekend"; }
+function protColor(p){ return p>=15?"#0A2A4A":p>=7?"#1A5276":p>0?"#5D8AA8":"#aaa"; }
 
-function mapOFFProduct(data) {
-  if (!data || data.status !== 1 || !data.product) return null;
-  const p = data.product;
-  const n = p.nutriments || {};
-  const num = v => { const x=parseFloat(v); return isNaN(x)?"":Math.round(x*10)/10; };
-  function guessCat(p2) {
-    const cats=(p2.categories_tags||[]).join(" ").toLowerCase();
-    const name=(p2.product_name||"").toLowerCase();
-    const s=cats+" "+name;
-    if(/yogh|yogurt|kvarg|kwark|melk|milk|cheese|ost|dairy|skyr/.test(s)) return "zuivel";
-    if(/protein|meat|fish|egg|kjøtt|fisk|kylling|chicken|salmon/.test(s)) return "eiwit";
-    if(/butter|margarin|mayo|spread|jam|peanut|smør|pålegg/.test(s)) return "broodbeleg";
-    if(/veget|fruit|grønnsak/.test(s)) return "groenten";
-    if(/bread|pasta|brød/.test(s)) return "granen";
-    return "overig";
-  }
-  let enumbers = "";
-  if (Array.isArray(p.additives_tags)) {
-    enumbers = p.additives_tags.map(t=>t.replace(/^en:/,"").toUpperCase()).filter(c=>/^E\d/.test(c)).join(", ");
-  }
-  return {
-    name: p.product_name||p.product_name_nb||p.product_name_en||"",
-    brand: (p.brands||"").split(",")[0].trim(),
-    cat: guessCat(p),
-    protein: num(n.proteins_100g), fat: num(n.fat_100g),
-    carb: num(n.carbohydrates_100g), sugar: num(n.sugars_100g),
-    kcal: n["energy-kcal_100g"]!=null?Math.round(n["energy-kcal_100g"]):"",
-    enumbers, note: p.quantity?"Verpakking: "+p.quantity:""
-  };
-}
-
-async function lookupBarcode(code) {
-  const url="https://world.openfoodfacts.org/api/v2/product/"+encodeURIComponent(code)+".json";
-  let res;
-  try { res = await fetch(url); } catch(e) { throw new Error("Geen internetverbinding — controleer je verbinding"); }
-  if(res.status===404) throw new Error("Dit product staat (nog) niet in Open Food Facts — vul handmatig in");
-  if(!res.ok) throw new Error("Database tijdelijk niet bereikbaar ("+res.status+") — probeer later opnieuw");
-  let data;
-  try { data = await res.json(); } catch(e) { throw new Error("Antwoord van database onleesbaar — probeer opnieuw"); }
-  if(data.status===0||!data.product) throw new Error("Dit product staat (nog) niet in Open Food Facts — vul handmatig in");
-  const mapped = mapOFFProduct(data);
-  if(!mapped) throw new Error("Dit product staat (nog) niet in Open Food Facts — vul handmatig in");
-  return mapped;
-}
-
-// ═══════════════════════════════════════════════════════════════
-// DOELSTELLINGEN — uitgebreid met activiteit, doelgewicht, macro's
-// ═══════════════════════════════════════════════════════════════
+// ══════════════════════════════════════════════════════════════════
+// DOELEN
+// ══════════════════════════════════════════════════════════════════
 const DEFAULT_GOALS = {
-  weight: 97,
-  targetWeight: 85,
-  proteinMin: 130,
-  proteinMax: 140,
-  proteinActive: 150,
-  goal: "afvallen",
-  mealsPerDay: 4,
-  activityLevel: "matig",   // laag | matig | hoog
-  kcalTarget: 2000,
-  fatTarget: 65,
-  carbTarget: 175,
+  weight:97, targetWeight:85,
+  proteinMin:130, proteinMax:140, proteinActive:150,
+  goal:"afvallen", mealsPerDay:4,
+  activityLevel:"matig", kcalTarget:2000, fatTarget:65, carbTarget:175
 };
 
-// ═══════════════════════════════════════════════════════════════
-// ADVIESMOTOR — volledig regel-gebaseerd, geen externe API
-// ═══════════════════════════════════════════════════════════════
-function generateAdvice(product, goals) {
-  const lines = [];
-  const p    = parseFloat(product.protein) || 0;
-  const fat  = parseFloat(product.fat)     || 0;
-  const carb = parseFloat(product.carb)    || 0;
-  const sugar= parseFloat(product.sugar)   || 0;
-  const kcal = parseFloat(product.kcal)    || 0;
-  const cat  = product.cat || "overig";
-
-  // ── 1. Effectief eiwitdoel op basis van activiteitsniveau ──
-  const actFactor = goals.activityLevel==="hoog"?1.3 : goals.activityLevel==="matig"?1.15 : 1.0;
-  const baseProtein = goals.goal==="spiermassa"
-    ? goals.proteinActive
-    : goals.goal==="onderhoud"
-      ? goals.proteinMin
-      : (goals.proteinMin + goals.proteinMax) / 2;
-  const effectiveProtein = Math.round(baseProtein * actFactor);
-  const proteinPerMeal   = Math.round(effectiveProtein / goals.mealsPerDay);
-  const kcalPerMeal      = Math.round(goals.kcalTarget  / goals.mealsPerDay);
-
-  // ── 2. Eiwitbeoordeling ──
-  if      (p >= 20) lines.push("✅ Topeiwitbron ("+p+"g/100g) — uitstekend voor jouw doel.");
-  else if (p >= 15) lines.push("✅ Uitstekende eiwitbron ("+p+"g/100g).");
-  else if (p >= 7)  lines.push("👍 Goede eiwitbron ("+p+"g/100g).");
-  else if (p >= 3)  lines.push("⚠️ Matige eiwitbron ("+p+"g/100g) — combineer met iets eiwitrijkers.");
-  else              lines.push("❌ Weinig eiwit ("+p+"g/100g) — vul aan met een eiwitrijker product.");
-
-  // ── 3. Portieadvies ──
-  if (p > 0) {
-    const portie = Math.round((proteinPerMeal / p) * 100);
-    if (portie >= 30 && portie <= 700) {
+// ══════════════════════════════════════════════════════════════════
+// ADVIESMOTOR
+// ══════════════════════════════════════════════════════════════════
+function generateAdvice(product, goals){
+  var lines=[];
+  var p=parseFloat(product.protein)||0;
+  var fat=parseFloat(product.fat)||0;
+  var sugar=parseFloat(product.sugar)||0;
+  var kcal=parseFloat(product.kcal)||0;
+  var carb=parseFloat(product.carb)||0;
+  var cat=product.cat||"overig";
+  var actFactor=goals.activityLevel==="hoog"?1.3:goals.activityLevel==="matig"?1.15:1.0;
+  var baseProtein=goals.goal==="spiermassa"?goals.proteinActive:goals.goal==="onderhoud"?goals.proteinMin:(goals.proteinMin+goals.proteinMax)/2;
+  var effectiveProtein=Math.round(baseProtein*actFactor);
+  var proteinPerMeal=Math.round(effectiveProtein/goals.mealsPerDay);
+  var kcalPerMeal=Math.round(goals.kcalTarget/goals.mealsPerDay);
+  var carbPerMeal=Math.round(goals.carbTarget/goals.mealsPerDay);
+  if(p>=20) lines.push("✅ Topeiwitbron ("+p+"g/100g) — uitstekend voor jouw doel.");
+  else if(p>=15) lines.push("✅ Uitstekende eiwitbron ("+p+"g/100g).");
+  else if(p>=7) lines.push("👍 Goede eiwitbron ("+p+"g/100g).");
+  else if(p>=3) lines.push("⚠️ Matige eiwitbron ("+p+"g/100g) — combineer met iets eiwitrijkers.");
+  else lines.push("❌ Weinig eiwit ("+p+"g/100g) — vul aan met een eiwitrijker product.");
+  if(p>0){
+    var portie=Math.round((proteinPerMeal/p)*100);
+    if(portie>=30&&portie<=700){
       lines.push("📏 Aanbevolen portie: ~"+portie+"g → levert "+proteinPerMeal+"g eiwit (doel "+effectiveProtein+"g/dag ÷ "+goals.mealsPerDay+" maaltijden).");
-      if (kcal > 0) {
-        const portieKcal = Math.round((portie / 100) * kcal);
-        const pct = Math.round((portieKcal / kcalPerMeal) * 100);
+      if(kcal>0){
+        var portieKcal=Math.round((portie/100)*kcal);
+        var pct=Math.round((portieKcal/kcalPerMeal)*100);
         lines.push("🔥 Die portie levert ~"+portieKcal+" kcal ("+pct+"% van je maaltijdbudget van "+kcalPerMeal+" kcal).");
       }
     }
   }
-
-  // ── 4. Vetbeoordeling ──
-  const fatPerMeal = Math.round(goals.fatTarget / goals.mealsPerDay);
-  if (fat > 30) {
-    lines.push("⚠️ Hoog vetgehalte ("+fat+"g/100g) — gebruik kleine porties; dagdoel is "+goals.fatTarget+"g vet.");
-  } else if (fat > 20 && goals.goal === "afvallen") {
-    lines.push("🟡 Redelijk vetgehalte ("+fat+"g/100g) — let op portiegrootte bij afvallen.");
-  }
-
-  // ── 5. Koolhydraten- en suikerwaarschuwing ──
-  const carbPerMeal = Math.round(goals.carbTarget / goals.mealsPerDay);
-  if (sugar > 15) {
-    lines.push("🍬 Hoog suikergehalte ("+sugar+"g/100g) — beperkt gebruiken; past minder goed bij "+goals.goal+".");
-  } else if (sugar > 8 && goals.goal === "afvallen") {
-    lines.push("🟡 Matig suikergehalte ("+sugar+"g/100g) — let op frequentie.");
-  }
-
-  // ── 6. Categorie-timing ──
-  const timing = {
-    zuivel:     "🕐 Goed als ontbijt of tussendoor snack.",
-    eiwit:      p>=15?"🍽️ Ideaal als hoofdgerecht of direct na het sporten.":"🍽️ Goed als onderdeel van een maaltijd.",
-    broodbeleg: fat>20?"🥪 Gebruik als topping in kleine hoeveelheid, niet als basis.":"🥪 Prima als broodbeleg.",
-    groenten:   "🥦 Caloriearm en voedzaam — combineer met een eiwitbron.",
-    granen:     "🌾 Combineer altijd met een eiwitbron (doel "+carbPerMeal+"g koolh./maaltijd).",
-    overig:     ""
-  };
-  if (timing[cat]) lines.push(timing[cat]);
-
-  // ── 7. Doelgewicht-context ──
-  const verschil = goals.weight - goals.targetWeight;
-  if (goals.goal === "afvallen" && verschil > 0) {
-    const past = p >= 7 && fat <= 20 && sugar <= 10;
-    if (verschil > 15)
-      lines.push("🎯 Nog "+verschil+"kg naar doelgewicht ("+goals.targetWeight+"kg) — "+(past?"dit product past goed in je plan.":"kies vaker producten met meer eiwit en minder vet."));
-    else if (verschil >= 5)
-      lines.push("🎯 Nog "+verschil+"kg naar doel — "+(past?"past prima in de afvalfase.":"let op vet- en suikergehalte."));
-    else if (verschil > 0)
-      lines.push("🎯 Bijna op doelgewicht ("+verschil+"kg te gaan) — focus op handhaven en voldoende eiwit.");
-  } else if (goals.goal === "spiermassa") {
-    lines.push(p>=15
-      ?"💪 Goede keuze voor spiermassa-opbouw — hoog eiwit ondersteunt spierherstel."
-      :"💪 Voor spiermassa: combineer met een product van >15g eiwit/100g.");
-  } else if (goals.goal === "onderhoud") {
+  if(fat>30) lines.push("⚠️ Hoog vetgehalte ("+fat+"g/100g) — gebruik kleine porties; dagdoel is "+goals.fatTarget+"g vet.");
+  else if(fat>20&&goals.goal==="afvallen") lines.push("🟡 Redelijk vetgehalte ("+fat+"g/100g) — let op portiegrootte bij afvallen.");
+  if(sugar>15) lines.push("🍬 Hoog suikergehalte ("+sugar+"g/100g) — beperkt gebruiken.");
+  else if(sugar>8&&goals.goal==="afvallen") lines.push("🟡 Matig suikergehalte ("+sugar+"g/100g) — let op frequentie.");
+  var timing={zuivel:"🕐 Goed als ontbijt of tussendoor snack.",eiwit:p>=15?"🍽️ Ideaal als hoofdgerecht of na het sporten.":"🍽️ Goed als onderdeel van een maaltijd.",broodbeleg:fat>20?"🥪 Gebruik als topping in kleine hoeveelheid.":"🥪 Prima als broodbeleg.",groenten:"🥦 Caloriearm en voedzaam — combineer met een eiwitbron.",granen:"🌾 Combineer altijd met een eiwitbron (doel "+carbPerMeal+"g koolh./maaltijd).",overig:""};
+  if(timing[cat]) lines.push(timing[cat]);
+  var verschil=goals.weight-goals.targetWeight;
+  if(goals.goal==="afvallen"&&verschil>0){
+    var past=p>=7&&fat<=20&&sugar<=10;
+    if(verschil>15) lines.push("🎯 Nog "+verschil+"kg naar doelgewicht ("+goals.targetWeight+"kg) — "+(past?"dit product past goed in je plan.":"kies vaker producten met meer eiwit en minder vet."));
+    else if(verschil>=5) lines.push("🎯 Nog "+verschil+"kg naar doel — "+(past?"past prima in de afvalfase.":"let op vet- en suikergehalte."));
+    else if(verschil>0) lines.push("🎯 Bijna op doelgewicht ("+verschil+"kg te gaan) — focus op handhaven en voldoende eiwit.");
+  } else if(goals.goal==="spiermassa"){
+    lines.push(p>=15?"💪 Goede keuze voor spiermassa-opbouw.":"💪 Voor spiermassa: combineer met een product van >15g eiwit/100g.");
+  } else if(goals.goal==="onderhoud"){
     lines.push("⚖️ Voor onderhoud: zorg dat je dagelijkse totaal rond "+effectiveProtein+"g eiwit blijft.");
   }
-
-  // ── 8. Activiteitsniveau-tip ──
-  if (goals.activityLevel === "hoog" && p < 10) {
-    lines.push("🏃 Bij intensief sporten heb je extra eiwit nodig — kies vaker producten boven 15g/100g.");
-  } else if (goals.activityLevel === "laag" && p >= 15) {
-    lines.push("🪑 Bij een laag activiteitsniveau is dit een efficiënte eiwitkeuze met beperkte calorieën.");
-  }
-
-  return lines.join("\n");
+  if(goals.activityLevel==="hoog"&&p<10) lines.push("🏃 Bij intensief sporten heb je extra eiwit nodig — kies vaker producten boven 15g/100g.");
+  else if(goals.activityLevel==="laag"&&p>=15) lines.push("🪑 Bij een laag activiteitsniveau is dit een efficiënte eiwitkeuze.");
+  return lines;
 }
 
-function proteinColor(p) {
-  if (p>=15) return "#0A2A4A"; if (p>=7) return "#1A5276"; if (p>0) return "#5D8AA8"; return "#aaa";
-}
-
-async function compressImage(dataUrl,maxSize=300,quality=0.78) {
-  try {
-    const blob=await(await fetch(dataUrl)).blob();
-    const bitmap=await createImageBitmap(blob,{imageOrientation:"from-image"});
-    const scale=Math.min(maxSize/bitmap.width,maxSize/bitmap.height,1);
-    const c=document.createElement("canvas"); c.width=Math.round(bitmap.width*scale); c.height=Math.round(bitmap.height*scale);
-    c.getContext("2d").drawImage(bitmap,0,0,c.width,c.height); bitmap.close&&bitmap.close(); return c.toDataURL("image/jpeg",quality);
-  } catch(e) {
-    return new Promise(resolve=>{
-      const img=new Image(); img.onload=()=>{
-        const scale=Math.min(maxSize/img.width,maxSize/img.height,1);
-        const c=document.createElement("canvas"); c.width=img.width*scale; c.height=img.height*scale;
-        c.getContext("2d").drawImage(img,0,0,c.width,c.height); resolve(c.toDataURL("image/jpeg",quality));
-      }; img.src=dataUrl;
-    });
-  }
-}
-
-function fileToBase64(file) {
-  return new Promise(resolve=>{ const r=new FileReader(); r.onload=e=>resolve(e.target.result); r.readAsDataURL(file); });
-}
-
-const F = {
-  forest:"#0A2A4A", sage:"#1A5276", mint:"#5DADE2", mintbg:"#EAF4FB",
-  cream:"#F4F8FB", warm:"#EBF5FB", stone:"#5D7A8A", border:"#C8DCE8", white:"#fff"
-};
-const inp = {
-  width:"100%", padding:"8px 10px", border:`1.5px solid ${F.border}`,
-  borderRadius:7, fontFamily:"inherit", fontSize:13, background:F.cream, outline:"none"
-};
-
-function App() {
-  const [products,setProducts]=useState([]);
-  const [goals,setGoals]=useState(DEFAULT_GOALS);
-  const [loaded,setLoaded]=useState(false);
-  const [filter,setFilter]=useState("all");
-  const [search,setSearch]=useState("");
-  const [showAdd,setShowAdd]=useState(false);
-  const [showGoals,setShowGoals]=useState(false);
-  const [showEdit,setShowEdit]=useState(false);
-  const [editProduct,setEditProduct]=useState(null);
-  const [editForm,setEditForm]=useState({});
-  const [editImgFront,setEditImgFront]=useState(null);
-  const [editImgLabel,setEditImgLabel]=useState(null);
-  const [detail,setDetail]=useState(null);
-  const [detailAdvice,setDetailAdvice]=useState("");
-  const [lightbox,setLightbox]=useState(null);
-  const [form,setForm]=useState({cat:"zuivel"});
-  const [imgFront,setImgFront]=useState(null);
-  const [imgLabel,setImgLabel]=useState(null);
-  const [scanning,setScanning]=useState(false);
-  const [barcodeOpen,setBarcodeOpen]=useState(false);
-  const [barcodeStatus,setBarcodeStatus]=useState("");
-  const [backupMsg,setBackupMsg]=useState("");
-  const [scanDone,setScanDone]=useState(false);
-  const [scanError,setScanError]=useState(false);
-  const [goalsDraft,setGoalsDraft]=useState(DEFAULT_GOALS);
-  const [saveErr,setSaveErr]=useState("");
-  const [snackResult,setSnackResult]=useState(null);
-  const [snackOpen,setSnackOpen]=useState(false);
-  const scannerRef=useRef(null);
-
-  useEffect(()=>{
-    (async()=>{
-      try {
-        const [pr,gr]=await Promise.all([storage.get("proteincheck-products"),storage.get("proteincheck-goals")]);
-        if(pr?.value) { setProducts(JSON.parse(pr.value)); }
-        else {
-          try {
-            const res=await fetch("producten.json?t="+Date.now());
-            if(res.ok){ const seed=await res.json(); if(Array.isArray(seed)&&seed.length){ setProducts(seed); await persist(seed); } else setProducts([]); }
-            else setProducts([]);
-          } catch(e){ setProducts([]); }
-        }
-        if(gr?.value) setGoals(JSON.parse(gr.value));
-      } catch(e){ setProducts([]); }
-      setLoaded(true);
-    })();
-  },[]);
-
-  async function persist(prods){
-    try{ await storage.set("proteincheck-products",JSON.stringify(prods)); }
-    catch(e){ setSaveErr("Opslag vol — maak een back-up en verwijder oude producten"); }
-  }
-
-  async function handleFrontPhoto(e){
-    const file=e.target.files[0]; if(!file) return;
-    setImgFront(await compressImage(await fileToBase64(file),320,0.78));
-  }
-  async function handleLabelPhoto(e){
-    const file=e.target.files[0]; if(!file) return;
-    setImgLabel(await compressImage(await fileToBase64(file),400,0.82));
-    setScanDone(false); setScanError(false);
-  }
-
-  async function openBarcodeScanner(){
-    setBarcodeOpen(true); setBarcodeStatus("Camera starten...");
-    setTimeout(async()=>{
-      if(typeof Html5Qrcode==="undefined"){ setBarcodeStatus("Scanner laadt nog. Wacht even of herlaad de pagina."); return; }
-      try {
-        const scanner=new Html5Qrcode("barcode-reader"); scannerRef.current=scanner;
-        setBarcodeStatus("Richt op de streepjescode...");
-        await scanner.start({facingMode:"environment"},{fps:10,qrbox:{width:250,height:150}},
-          async(decodedText)=>{ await stopBarcodeScanner(); setBarcodeStatus(""); setBarcodeOpen(false); await handleBarcodeResult(decodedText); },
-          ()=>{}
-        );
-      } catch(err){ setBarcodeStatus("Camera kon niet starten: "+(err.message||err)); }
-    },300);
-  }
-  async function stopBarcodeScanner(){
-    if(scannerRef.current){ try{ await scannerRef.current.stop(); scannerRef.current.clear(); }catch(e){} scannerRef.current=null; }
-  }
-  async function closeBarcodeScanner(){ await stopBarcodeScanner(); setBarcodeOpen(false); setBarcodeStatus(""); }
-
-  async function handleBarcodeResult(code){
-    setScanning(true); setScanError(false);
-    try {
-      const result=await lookupBarcode(code);
-      setForm(prev=>({...prev,...Object.fromEntries(Object.entries(result).filter(([,v])=>v!==""))}));
-      setScanDone(true);
-    } catch(err){ setScanError(err.message||"Barcode niet herkend — vul handmatig in"); }
-    setScanning(false);
-  }
-
-  function openDetail(p){
-    setDetail(p);
-    setDetailAdvice(generateAdvice(p, goals));
-  }
-
-  // ════════════════════════════════════════════════════════════════
-  // SNACK SUGGESTIE ENGINE
-  // ════════════════════════════════════════════════════════════════
-  function generateSnack() {
-    if (!products.length) {
-      setSnackResult({ error: "Voeg eerst producten toe aan je catalogus." });
-      setSnackOpen(true); return;
-    }
-    const hour = new Date().getHours();
-
-    // Tijdslot bepalen
-    const slot =
-      hour >= 6  && hour < 10 ? "ontbijt"     :
-      hour >= 10 && hour < 12 ? "ochtendsnack" :
-      hour >= 12 && hour < 14 ? "lunch"        :
-      hour >= 14 && hour < 17 ? "middagsnack"  :
-      hour >= 17 && hour < 20 ? "avondeten"    :
-      hour >= 20 && hour < 23 ? "avondsnack"   :
-                                "nachtsnack";
-
-    // Welke categorieën passen bij het moment?
-    const catPref = {
-      ontbijt:      ["zuivel","granen","eiwit"],
-      ochtendsnack: ["zuivel","eiwit","groenten"],
-      lunch:        ["eiwit","groenten","granen","broodbeleg"],
-      middagsnack:  ["zuivel","eiwit","groenten"],
-      avondeten:    ["eiwit","groenten","granen"],
-      avondsnack:   ["zuivel","eiwit"],
-      nachtsnack:   ["zuivel","eiwit"],
-    }[slot] || ["eiwit","zuivel"];
-
-    // Resterende macrospace op dit moment van de dag
-    // Simpele schatting: hoeveel maaltijden zijn er al geweest?
-    const mealsElapsed = Math.min(goals.mealsPerDay,
-      hour < 8  ? 0 :
-      hour < 12 ? 1 :
-      hour < 15 ? 2 :
-      hour < 19 ? 3 : goals.mealsPerDay - 1
-    );
-    const mealsLeft = Math.max(1, goals.mealsPerDay - mealsElapsed);
-    const actFactor = goals.activityLevel==="hoog"?1.3 : goals.activityLevel==="matig"?1.15 : 1.0;
-    const effectiveProtein = Math.round(((goals.proteinMin+goals.proteinMax)/2) * actFactor);
-    const proteinLeft  = Math.round(effectiveProtein * (mealsLeft / goals.mealsPerDay));
-    const kcalLeft     = Math.round(goals.kcalTarget  * (mealsLeft / goals.mealsPerDay));
-    const fatLeft      = Math.round(goals.fatTarget   * (mealsLeft / goals.mealsPerDay));
-
-    // Snackportie: voor een echte snack ~ 1 maaltijd / 1.5
-    const snackProteinTarget = Math.round(proteinLeft / Math.max(1, mealsLeft));
-    const snackKcalBudget    = Math.round(kcalLeft    / Math.max(1, mealsLeft));
-    const snackFatBudget     = Math.round(fatLeft     / Math.max(1, mealsLeft));
-
-    // Score elk product
-    const scored = products.map(p => {
-      const prot  = parseFloat(p.protein)||0;
-      const fat   = parseFloat(p.fat)||0;
-      const sugar = parseFloat(p.sugar)||0;
-      const kcal  = parseFloat(p.kcal)||0;
-      let score = 0;
-
-      // Categorie voorkeur voor dit tijdstip
-      const catRank = catPref.indexOf(p.cat);
-      if      (catRank === 0) score += 40;
-      else if (catRank === 1) score += 25;
-      else if (catRank === 2) score += 10;
-
-      // Eiwit dichtheid
-      if      (prot >= 20) score += 35;
-      else if (prot >= 15) score += 25;
-      else if (prot >= 7)  score += 12;
-      else if (prot >= 3)  score += 4;
-
-      // Afstemming op doel
-      if (goals.goal === "afvallen") {
-        if (fat   > 25) score -= 20;
-        if (sugar > 12) score -= 15;
-        if (kcal  > 0 && kcal < 200) score += 10; // laagcalorisch bonus
-      } else if (goals.goal === "spiermassa") {
-        if (prot >= 15) score += 15;
-        if (kcal  > 200) score += 5; // calorie-dense is ok
-      }
-
-      // E-nummers straf
-      const ens = (p.enumbers||"").toUpperCase().match(/E\s?\d{3}[A-Z]?/g)||[];
-      const redCount = ens.filter(e => {
-        const code = e.replace(/\s/g,"");
-        return ["E102","E104","E110","E122","E124","E127","E129","E131","E133",
-                "E171","E220","E221","E249","E250","E251","E252","E320","E321",
-                "E621","E622","E627","E631","E951","E952"].includes(code);
-      }).length;
-      score -= redCount * 8;
-
-      // Avondsnack: voorkeur voor licht verteerbaar
-      if ((slot==="avondsnack"||slot==="nachtsnack") && kcal > 300) score -= 10;
-
-      return { ...p, _score: score };
-    });
-
-    // Sorteer, pak top-3 en kies willekeurig uit de top
-    scored.sort((a,b) => b._score - a._score);
-    const top = scored.slice(0, Math.min(3, scored.length));
-    const pick = top[Math.floor(Math.random() * top.length)];
-
-    // Bereken portie
-    const prot = parseFloat(pick.protein)||0;
-    let portie = prot > 0
-      ? Math.round((snackProteinTarget / prot) * 100)
-      : 100;
-    portie = Math.max(30, Math.min(500, portie));
-
-    const portieKcal = pick.kcal > 0 ? Math.round((portie/100)*pick.kcal) : null;
-    const portieProt = prot > 0       ? Math.round((portie/100)*prot)      : null;
-
-    // Contextzin
-    const slotLabel = {
-      ontbijt:"ontbijt", ochtendsnack:"ochtendsnack", lunch:"lunch",
-      middagsnack:"middagsnack", avondeten:"avondeten",
-      avondsnack:"avondsnack", nachtsnack:"late snack"
-    }[slot];
-
-    const fitMsg = goals.goal==="afvallen"
-      ? `Past bij afvallen: beperkt in calorieën en levert goed eiwit.`
-      : goals.goal==="spiermassa"
-      ? `Goed voor spiermassa: hoog eiwit ondersteunt spierherstel.`
-      : `Goede keuze voor onderhoud: evenwichtige macro's.`;
-
-    setSnackResult({ pick, portie, portieKcal, portieProt, slotLabel, snackKcalBudget, snackProteinTarget, fitMsg, hour, top });
-    setSnackOpen(true);
-  }
-
-  function openEdit(p){
-    setEditProduct(p);
-    setEditForm({name:p.name,brand:p.brand,cat:p.cat,use:p.use,protein:p.protein,fat:p.fat,carb:p.carb,sugar:p.sugar,kcal:p.kcal,note:p.note,enumbers:p.enumbers||""});
-    setEditImgFront(p.imgFront||null); setEditImgLabel(p.imgLabel||null);
-    setDetail(null); setDetailAdvice(""); setShowEdit(true);
-  }
-
-  async function handleEditFrontPhoto(e){
-    const file=e.target.files[0]; if(!file) return;
-    setEditImgFront(await compressImage(await fileToBase64(file),320,0.78));
-  }
-  async function handleEditLabelPhoto(e){
-    const file=e.target.files[0]; if(!file) return;
-    setEditImgLabel(await compressImage(await fileToBase64(file),400,0.82));
-  }
-
-  async function saveEdit(){
-    if(!editForm.name||!editProduct) return;
-    const updated=products.map(p=>p.id===editProduct.id?{...p,...editForm,protein:parseFloat(editForm.protein)||0,fat:parseFloat(editForm.fat)||0,carb:parseFloat(editForm.carb)||0,sugar:parseFloat(editForm.sugar)||0,kcal:parseInt(editForm.kcal)||0,imgFront:editImgFront||p.imgFront||null,imgLabel:editImgLabel||p.imgLabel||null}:p);
-    setProducts(updated); await persist(updated); setShowEdit(false); setEditProduct(null);
-  }
-
-  async function addProduct(){
-    if(!form.name) return;
-    const p={id:Date.now(),name:form.name,brand:form.brand||"",cat:form.cat||"overig",use:form.use||"",protein:parseFloat(form.protein)||0,fat:parseFloat(form.fat)||0,carb:parseFloat(form.carb)||0,sugar:parseFloat(form.sugar)||0,kcal:parseInt(form.kcal)||0,note:form.note||"",enumbers:form.enumbers||"",imgFront:imgFront||null,imgLabel:imgLabel||null,emoji:"🫙"};
-    const updated=[...products,p]; setProducts(updated); await persist(updated);
-    setShowAdd(false); setForm({cat:"zuivel"}); setImgFront(null); setImgLabel(null); setScanDone(false); setScanError(false);
-  }
-
-  async function deleteProduct(id){
-    const updated=products.filter(p=>p.id!==id); setProducts(updated); await persist(updated); setDetail(null); setDetailAdvice("");
-  }
-
-  function saveGoalsDraft(){
-    setGoals(goalsDraft); storage.set("proteincheck-goals",JSON.stringify(goalsDraft)).catch(()=>{});
-    setShowGoals(false);
-  }
-
-  function exportData(){
-    try{
-      const blob=new Blob([JSON.stringify({app:"ProteinCheck",version:2,exportedAt:new Date().toISOString(),products,goals})],{type:"application/json"});
-      const url=URL.createObjectURL(blob); const a=document.createElement("a");
-      a.href=url; a.download="proteincheck-backup-"+new Date().toISOString().slice(0,10)+".json";
-      document.body.appendChild(a); a.click(); document.body.removeChild(a);
-      setTimeout(()=>URL.revokeObjectURL(url),1000);
-      setBackupMsg("✓ Back-up gemaakt — bewaar het bestand in iCloud of Bestanden");
-    }catch(e){ setBackupMsg("Exporteren mislukt: "+(e.message||"onbekende fout")); }
-  }
-
-  function importData(e){
-    const file=e.target.files&&e.target.files[0]; if(!file) return;
-    const reader=new FileReader();
-    reader.onload=async(ev)=>{
-      try{
-        const data=JSON.parse(ev.target.result);
-        let prods=null,importedGoals=null;
-        if(Array.isArray(data)) prods=data;
-        else if(data&&Array.isArray(data.products)){ prods=data.products; importedGoals=data.goals||null; }
-        if(!prods){ setBackupMsg("Dit bestand bevat geen producten"); return; }
-        setProducts(prods); await persist(prods);
-        if(importedGoals){ setGoals(importedGoals); await storage.set("proteincheck-goals",JSON.stringify(importedGoals)); }
-        setBackupMsg("✓ "+prods.length+" producten geladen");
-      }catch(err){ setBackupMsg("Importeren mislukt: bestand onleesbaar"); }
-    };
-    reader.readAsText(file); e.target.value="";
-  }
-
-  const filtered=products.filter(p=>{
-    const matchCat=filter==="all"||p.cat===filter;
-    const q=search.toLowerCase();
-    return matchCat&&(!q||p.name.toLowerCase().includes(q)||(p.brand||"").toLowerCase().includes(q));
+// ══════════════════════════════════════════════════════════════════
+// SNACK ENGINE
+// ══════════════════════════════════════════════════════════════════
+function generateSnack(products, goals){
+  if(!products.length) return {error:"Voeg eerst producten toe aan je catalogus."};
+  var hour=new Date().getHours();
+  var slot=hour>=6&&hour<10?"ontbijt":hour>=10&&hour<12?"ochtendsnack":hour>=12&&hour<14?"lunch":hour>=14&&hour<17?"middagsnack":hour>=17&&hour<20?"avondeten":hour>=20&&hour<23?"avondsnack":"nachtsnack";
+  var catPref={ontbijt:["zuivel","granen","eiwit"],ochtendsnack:["zuivel","eiwit","groenten"],lunch:["eiwit","groenten","granen","broodbeleg"],middagsnack:["zuivel","eiwit","groenten"],avondeten:["eiwit","groenten","granen"],avondsnack:["zuivel","eiwit"],nachtsnack:["zuivel","eiwit"]}[slot]||["eiwit","zuivel"];
+  var mealsElapsed=Math.min(goals.mealsPerDay,hour<8?0:hour<12?1:hour<15?2:hour<19?3:goals.mealsPerDay-1);
+  var mealsLeft=Math.max(1,goals.mealsPerDay-mealsElapsed);
+  var actFactor=goals.activityLevel==="hoog"?1.3:goals.activityLevel==="matig"?1.15:1.0;
+  var effectiveProtein=Math.round(((goals.proteinMin+goals.proteinMax)/2)*actFactor);
+  var proteinLeft=Math.round(effectiveProtein*(mealsLeft/goals.mealsPerDay));
+  var kcalLeft=Math.round(goals.kcalTarget*(mealsLeft/goals.mealsPerDay));
+  var snackProteinTarget=Math.round(proteinLeft/Math.max(1,mealsLeft));
+  var snackKcalBudget=Math.round(kcalLeft/Math.max(1,mealsLeft));
+  var RED_E=["E102","E104","E110","E122","E124","E127","E129","E131","E133","E171","E220","E221","E249","E250","E251","E252","E320","E321","E621","E622","E627","E631","E951","E952"];
+  var scored=products.map(function(p){
+    var prot=parseFloat(p.protein)||0, fat=parseFloat(p.fat)||0, sugar=parseFloat(p.sugar)||0, kcal=parseFloat(p.kcal)||0;
+    var score=0;
+    var catRank=catPref.indexOf(p.cat);
+    if(catRank===0) score+=40; else if(catRank===1) score+=25; else if(catRank===2) score+=10;
+    if(prot>=20) score+=35; else if(prot>=15) score+=25; else if(prot>=7) score+=12; else if(prot>=3) score+=4;
+    if(goals.goal==="afvallen"){ if(fat>25) score-=20; if(sugar>12) score-=15; if(kcal>0&&kcal<200) score+=10; }
+    else if(goals.goal==="spiermassa"){ if(prot>=15) score+=15; if(kcal>200) score+=5; }
+    var ens=(p.enumbers||"").toUpperCase().match(/E\s?\d{3}[A-Z]?/g)||[];
+    var redCount=ens.filter(function(e){ return RED_E.indexOf(e.replace(/\s/g,""))>=0; }).length;
+    score-=redCount*8;
+    if((slot==="avondsnack"||slot==="nachtsnack")&&kcal>300) score-=10;
+    return Object.assign({},p,{_score:score});
   });
-  const avgProt=products.length?(products.reduce((s,p)=>s+p.protein,0)/products.length).toFixed(1):0;
-  const topProt=products.length?[...products].sort((a,b)=>b.protein-a.protein)[0]:null;
-
-  if(!loaded) return React.createElement("div",{style:{display:"flex",alignItems:"center",justifyContent:"center",height:"100vh",fontFamily:"system-ui",color:F.stone,flexDirection:"column",gap:12}},
-    React.createElement("div",{style:{fontSize:32}},"🌿"),React.createElement("div",null,"Laden..."));
-
-  // ─── PHOTO SLOT HELPER ───────────────────────────────────────────
-  const PhotoSlot=({img,onFile,icon,label,hint,children})=>
-    React.createElement("div",{style:{flex:1,display:"flex",flexDirection:"column",gap:6}},
-      React.createElement("div",{style:{fontSize:10,fontWeight:700,color:F.forest,textTransform:"uppercase",letterSpacing:0.5}},icon," ",label),
-      React.createElement("label",{style:{cursor:"pointer",display:"block"}},
-        img
-          ? React.createElement("div",null,
-              React.createElement("img",{src:img,style:{width:"100%",height:130,objectFit:"cover",borderRadius:8,border:`2px solid ${F.mint}`,display:"block"}}),
-              React.createElement("div",{style:{textAlign:"center",marginTop:4,fontSize:10,color:F.stone}},"Tik om te wijzigen"))
-          : React.createElement("div",{style:{border:`2px dashed ${F.mint}`,borderRadius:8,height:130,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:4,background:F.mintbg,color:F.sage}},
-              React.createElement("div",{style:{fontSize:24}},"📷"),
-              React.createElement("div",{style:{fontSize:11,fontWeight:600}},label),
-              React.createElement("div",{style:{fontSize:10,color:F.stone,textAlign:"center",padding:"0 8px"}},hint)),
-        React.createElement("input",{type:"file",accept:"image/*",capture:"environment",onChange:onFile,style:{display:"none"}})),
-      children);
-
-  // ─── FIELD HELPER ────────────────────────────────────────────────
-  const Field=({label,children})=>
-    React.createElement("div",null,
-      React.createElement("div",{style:{fontSize:10,fontWeight:600,color:F.stone,textTransform:"uppercase",letterSpacing:0.5,marginBottom:3}},label),
-      children);
-
-  // ─── E-NUMBER TAG HELPER ─────────────────────────────────────────
-  const ETags=({enumbers})=>{
-    const ens=parseENumbers(enumbers||"");
-    if(!ens.length) return null;
-    return React.createElement("div",{style:{display:"flex",flexWrap:"wrap",gap:5,marginTop:8}},
-      ens.map(en=>React.createElement("div",{key:en.code,style:{display:"flex",alignItems:"center",gap:4,background:eRatingColor(en.rating)+"18",border:`1px solid ${eRatingColor(en.rating)}`,borderRadius:6,padding:"3px 7px",fontSize:11}},
-        React.createElement("span",{style:{width:7,height:7,borderRadius:"50%",background:eRatingColor(en.rating)}}),
-        React.createElement("strong",{style:{color:eRatingColor(en.rating)}},en.code),
-        React.createElement("span",{style:{color:F.stone,fontSize:10}},en.name))));
-  };
-
-  // ─── ADVICE DISPLAY ──────────────────────────────────────────────
-  const AdviceBlock=({advice})=>{
-    const lines=advice.split("\n").filter(Boolean);
-    return React.createElement("div",{style:{background:F.mintbg,border:`1px solid ${F.mint}`,borderRadius:9,padding:"11px 13px",marginBottom:12}},
-      React.createElement("div",{style:{fontSize:11,fontWeight:700,color:F.forest,marginBottom:8}},"💡 Persoonlijk advies"),
-      lines.map((line,i)=>{
-        const isWarning=line.startsWith("⚠️")||line.startsWith("❌")||line.startsWith("🍬");
-        const isGood=line.startsWith("✅")||line.startsWith("👍")||line.startsWith("💪");
-        const bgc=isWarning?"#fff5f5":isGood?"#f0faf4":"transparent";
-        return React.createElement("div",{key:i,style:{fontSize:12,color:"#1A3A5A",lineHeight:1.6,padding:"3px 6px",marginBottom:2,borderRadius:5,background:bgc}},line);
-      }));
-  };
-
-  return React.createElement("div",{style:{fontFamily:"system-ui,sans-serif",background:F.cream,minHeight:"100vh",color:"#1E1E1E"}},
-
-    // ── BARCODE OVERLAY ──
-    barcodeOpen&&React.createElement("div",{style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.92)",zIndex:1000,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",padding:20}},
-      React.createElement("div",{style:{color:"#fff",fontSize:16,fontWeight:700,marginBottom:16}},"📷 Scan de streepjescode"),
-      React.createElement("div",{id:"barcode-reader",style:{width:"100%",maxWidth:340,borderRadius:12,overflow:"hidden",background:"#000"}}),
-      barcodeStatus&&React.createElement("div",{style:{color:"#fff",fontSize:13,marginTop:16,textAlign:"center",maxWidth:320,lineHeight:1.5}},barcodeStatus),
-      React.createElement("button",{onClick:closeBarcodeScanner,style:{marginTop:20,padding:"11px 28px",border:"1.5px solid #fff",borderRadius:10,background:"transparent",color:"#fff",fontFamily:"inherit",fontSize:14,fontWeight:600,cursor:"pointer"}},"Annuleren")),
-
-    // ── LIGHTBOX ──
-    lightbox&&React.createElement("div",{onClick:()=>setLightbox(null),style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.92)",zIndex:999,display:"flex",alignItems:"center",justifyContent:"center",padding:16}},
-      React.createElement("img",{src:lightbox,style:{maxWidth:"100%",maxHeight:"100%",borderRadius:10,objectFit:"contain"}}),
-      React.createElement("div",{style:{position:"absolute",top:20,right:20,color:"#fff",fontSize:28,cursor:"pointer",lineHeight:1}},"✕")),
-
-    // ── HEADER ──
-    React.createElement("div",{style:{background:F.forest,padding:"calc(14px + env(safe-area-inset-top)) 18px 12px",position:"sticky",top:0,zIndex:100,boxShadow:"0 2px 12px rgba(0,0,0,0.2)",display:"flex",alignItems:"center",justifyContent:"space-between"}},
-      React.createElement("div",null,
-        React.createElement("div",{style:{display:"flex",alignItems:"center",gap:9}},
-          React.createElement("div",{style:{fontSize:24}},"🌿"),
-          React.createElement("div",{style:{fontSize:19,fontWeight:700,color:"#fff"}},"Mijn Voedselcatalogus")),
-        React.createElement("div",{style:{fontSize:11,color:F.mint,marginTop:1,letterSpacing:0.3}},"Eiwitten & E-nummers inzichtelijk")),
-      React.createElement("button",{onClick:()=>{setGoalsDraft({...goals});setShowGoals(true);},style:{background:"rgba(255,255,255,0.15)",border:"none",borderRadius:8,padding:"8px 12px",color:"#fff",fontSize:12,cursor:"pointer",fontFamily:"inherit"}},"⚙️ Doelen")),
-
-    // ── STATS BAR ──
-    React.createElement("div",{style:{background:F.forest,display:"flex",borderTop:"1px solid rgba(255,255,255,0.1)"}},
-      [{num:`${goals.proteinMin}–${goals.proteinMax}g`,lbl:"Eiwitdoel/dag"},
-       {num:`${goals.weight}→${goals.targetWeight}kg`,lbl:"Gewicht / doel"},
-       {num:avgProt+"g",lbl:"Gem. eiwit/100g"},
-       {num:topProt?topProt.name.split(" ").slice(0,2).join(" "):"-",lbl:"⭐ Meest eiwit"}
-      ].map((s,i)=>React.createElement("div",{key:i,style:{flex:1,padding:"8px 4px",textAlign:"center",borderRight:i<3?"1px solid rgba(255,255,255,0.1)":"none"}},
-        React.createElement("div",{style:{fontSize:i===3?9:13,fontWeight:700,color:F.mint,lineHeight:1.2}},s.num),
-        React.createElement("div",{style:{fontSize:9,color:"rgba(255,255,255,0.6)",marginTop:1}},s.lbl)))),
-
-    saveErr&&React.createElement("div",{style:{background:"#fff0ee",color:"#c0392b",padding:"8px 14px",fontSize:12}},saveErr),
-
-    // ── FILTER BAR ──
-    React.createElement("div",{style:{display:"flex",gap:7,padding:"11px 13px",background:F.white,borderBottom:`1px solid ${F.border}`,flexWrap:"wrap",alignItems:"center"}},
-      [["all","Alles"],["zuivel","🥛 Zuivel"],["eiwit","💪 Eiwitbron"],["broodbeleg","🥪 Broodbeleg"],["groenten","🥦 Groenten"],["granen","🌾 Granen"],["overig","🫙 Overig"]].map(([val,lbl])=>
-        React.createElement("button",{key:val,onClick:()=>setFilter(val),style:{padding:"5px 11px",borderRadius:20,border:`1.5px solid ${filter===val?F.forest:F.border}`,background:filter===val?F.forest:F.cream,color:filter===val?"#fff":F.stone,fontSize:11,fontWeight:500,cursor:"pointer",fontFamily:"inherit"}},lbl)),
-      React.createElement("input",{value:search,onChange:e=>setSearch(e.target.value),placeholder:"🔍 Zoeken...",style:{marginLeft:"auto",padding:"6px 11px",border:`1.5px solid ${F.border}`,borderRadius:20,fontSize:12,background:F.cream,outline:"none",width:130,fontFamily:"inherit"}})),
-
-    // ── PRODUCT GRID ──
-    React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(auto-fill,minmax(165px,1fr))",gap:12,padding:"14px 14px 100px 14px"}},
-      filtered.map(p=>{
-        const barPct=Math.min(100,p.protein/30*100);
-        return React.createElement("div",{key:p.id,onClick:()=>openDetail(p),style:{background:F.white,borderRadius:12,overflow:"hidden",boxShadow:"0 2px 8px rgba(26,77,46,0.10)",border:`1px solid ${F.border}`,cursor:"pointer",display:"flex",flexDirection:"column"}},
-          p.imgFront
-            ?React.createElement("img",{src:p.imgFront,alt:p.name,style:{width:"100%",height:145,objectFit:"cover"}})
-            :React.createElement("div",{style:{width:"100%",height:145,display:"flex",alignItems:"center",justifyContent:"center",fontSize:42,background:F.warm}},p.emoji||"🫙"),
-          React.createElement("div",{style:{height:3,background:`linear-gradient(90deg,${proteinColor(p.protein)} ${barPct}%,${F.border} ${barPct}%)`}}),
-          React.createElement("div",{style:{padding:10,flex:1,display:"flex",flexDirection:"column",gap:4}},
-            React.createElement("div",{style:{fontSize:9,fontWeight:600,letterSpacing:1,textTransform:"uppercase",color:F.stone}},CAT_LABELS[p.cat]),
-            React.createElement("div",{style:{fontSize:14,fontWeight:700,color:F.forest,lineHeight:1.2}},p.name),
-            React.createElement("div",{style:{display:"inline-flex",background:proteinColor(p.protein),color:"#fff",fontSize:10,fontWeight:700,padding:"2px 8px",borderRadius:20,width:"fit-content",marginTop:2}},p.protein,"g eiwit/100g"),
-            React.createElement("div",{style:{display:"flex",gap:4,marginTop:3}},
-              [["Vet",p.fat+"g"],["Koolh",p.carb+"g"],["kcal",p.kcal]].map(([l,v])=>
-                React.createElement("div",{key:l,style:{flex:1,background:F.warm,borderRadius:5,padding:"3px 4px",textAlign:"center"}},
-                  React.createElement("div",{style:{fontSize:8,color:F.stone}},l),
-                  React.createElement("div",{style:{fontSize:10,fontWeight:700}},v)))),
-            p.use&&React.createElement("div",{style:{fontSize:10,color:F.sage,fontWeight:500,marginTop:2}},p.use),
-            (()=>{
-              const ens=parseENumbers(p.enumbers);
-              const reds=ens.filter(e=>e.rating==="red").length;
-              const yellows=ens.filter(e=>e.rating==="yellow").length;
-              if(reds===0&&yellows===0) return null;
-              return React.createElement("div",{style:{display:"flex",gap:4,marginTop:4}},
-                reds>0&&React.createElement("span",{style:{fontSize:9,fontWeight:700,color:"#fff",background:"#C0392B",borderRadius:10,padding:"1px 7px"}},"🔴 ",reds),
-                yellows>0&&React.createElement("span",{style:{fontSize:9,fontWeight:700,color:"#fff",background:"#D4A017",borderRadius:10,padding:"1px 7px"}},"🟡 ",yellows));
-            })()));
-      }),
-      React.createElement("div",{onClick:()=>{setShowAdd(true);setForm({cat:"zuivel"});setImgFront(null);setImgLabel(null);setScanDone(false);setScanError(false);},style:{background:F.mintbg,border:`2px dashed ${F.mint}`,borderRadius:12,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:8,minHeight:260,cursor:"pointer",color:F.sage,fontSize:13,fontWeight:600}},
-        React.createElement("div",{style:{fontSize:30}},"+"),
-        React.createElement("span",null,"Product toevoegen"))),
-
-    // ════════════════════════════════════════════════════════════════
-    // DOELEN PANEEL — uitgebreid met 5 nieuwe variabelen
-    // ════════════════════════════════════════════════════════════════
-    showGoals&&React.createElement("div",{onClick:e=>{if(e.target===e.currentTarget)setShowGoals(false);},style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",zIndex:200,display:"flex",alignItems:"center",justifyContent:"center",padding:16}},
-      React.createElement("div",{style:{background:"#fff",borderRadius:16,width:"100%",maxWidth:440,maxHeight:"92vh",overflowY:"auto",padding:20,boxShadow:"0 20px 60px rgba(0,0,0,0.25)"}},
-        React.createElement("div",{style:{fontSize:18,fontWeight:700,color:F.forest,marginBottom:4}},"⚙️ Mijn Doelen"),
-        React.createElement("div",{style:{fontSize:12,color:F.stone,marginBottom:16}},"Wordt gebruikt voor het persoonlijk advies per product."),
-
-        React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:14}},
-
-          // ── Gewicht ──
-          React.createElement("div",{style:{background:F.warm,borderRadius:10,padding:"12px 14px"}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:700,color:F.forest,marginBottom:8}},"⚖️ Gewicht"),
-            React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr",gap:8}},
-              React.createElement(Field,{label:"Huidig gewicht (kg)"},
-                React.createElement("input",{type:"number",value:goalsDraft.weight,onChange:e=>setGoalsDraft({...goalsDraft,weight:parseFloat(e.target.value)||0}),style:inp})),
-              React.createElement(Field,{label:"Doelgewicht (kg)"},
-                React.createElement("input",{type:"number",value:goalsDraft.targetWeight,onChange:e=>setGoalsDraft({...goalsDraft,targetWeight:parseFloat(e.target.value)||0}),style:inp})))),
-
-          // ── Eiwit ──
-          React.createElement("div",{style:{background:F.warm,borderRadius:10,padding:"12px 14px"}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:700,color:F.forest,marginBottom:8}},"💪 Eiwitdoelen (g/dag)"),
-            React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}},
-              ...["proteinMin","proteinMax","proteinActive"].map((key,i)=>
-                React.createElement(Field,{key,label:["Minimum","Maximum","Actief"][i]},
-                  React.createElement("input",{type:"number",value:goalsDraft[key],onChange:e=>setGoalsDraft({...goalsDraft,[key]:parseFloat(e.target.value)||0}),style:{...inp,padding:"7px 8px"}}))))),
-
-          // ── Calorie & macro's ──
-          React.createElement("div",{style:{background:F.warm,borderRadius:10,padding:"12px 14px"}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:700,color:F.forest,marginBottom:8}},"🔥 Calorie- & macrodoelen (/dag)"),
-            React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:8}},
-              React.createElement(Field,{label:"kcal"},
-                React.createElement("input",{type:"number",value:goalsDraft.kcalTarget,onChange:e=>setGoalsDraft({...goalsDraft,kcalTarget:parseFloat(e.target.value)||0}),style:{...inp,padding:"7px 8px"}})),
-              React.createElement(Field,{label:"Vet (g)"},
-                React.createElement("input",{type:"number",value:goalsDraft.fatTarget,onChange:e=>setGoalsDraft({...goalsDraft,fatTarget:parseFloat(e.target.value)||0}),style:{...inp,padding:"7px 8px"}})),
-              React.createElement(Field,{label:"Koolh. (g)"},
-                React.createElement("input",{type:"number",value:goalsDraft.carbTarget,onChange:e=>setGoalsDraft({...goalsDraft,carbTarget:parseFloat(e.target.value)||0}),style:{...inp,padding:"7px 8px"}}))),
-            React.createElement("div",{style:{fontSize:10,color:F.stone,marginTop:8,lineHeight:1.5}},"💡 Snel berekenen: bij afvallen ~",Math.round(goalsDraft.weight*24)," kcal × 0,80 = ca. ",Math.round(goalsDraft.weight*24*0.80)," kcal deficit.")),
-
-          // ── Activiteitsniveau ──
-          React.createElement("div",{style:{background:F.warm,borderRadius:10,padding:"12px 14px"}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:700,color:F.forest,marginBottom:8}},"🏃 Activiteitsniveau"),
-            React.createElement("div",{style:{display:"flex",gap:8}},
-              [["laag","🪑 Laag","1×/week of minder"],["matig","🚶 Matig","2–4×/week"],["hoog","🏃 Hoog","5×/week of meer"]].map(([val,lbl,sub])=>
-                React.createElement("button",{key:val,onClick:()=>setGoalsDraft({...goalsDraft,activityLevel:val}),style:{flex:1,padding:"9px 4px",borderRadius:8,border:`2px solid ${goalsDraft.activityLevel===val?F.forest:F.border}`,background:goalsDraft.activityLevel===val?F.mintbg:F.cream,color:goalsDraft.activityLevel===val?F.forest:F.stone,fontSize:10,fontWeight:600,cursor:"pointer",fontFamily:"inherit",lineHeight:1.4}},
-                  React.createElement("div",null,lbl),React.createElement("div",{style:{fontSize:9,fontWeight:400,color:F.stone}},sub)))),
-            React.createElement("div",{style:{fontSize:10,color:F.stone,marginTop:8}},"Effectief eiwitdoel op basis van activiteit: ~",
-              Math.round(((goalsDraft.goal==="spiermassa"?goalsDraft.proteinActive:goalsDraft.goal==="onderhoud"?goalsDraft.proteinMin:(goalsDraft.proteinMin+goalsDraft.proteinMax)/2)*(goalsDraft.activityLevel==="hoog"?1.3:goalsDraft.activityLevel==="matig"?1.15:1.0))),"g/dag")),
-
-          // ── Hoofddoel ──
-          React.createElement("div",{style:{background:F.warm,borderRadius:10,padding:"12px 14px"}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:700,color:F.forest,marginBottom:8}},"🎯 Hoofddoel"),
-            React.createElement("div",{style:{display:"flex",gap:8}},
-              [["afvallen","⬇️ Afvallen"],["spiermassa","💪 Spiermassa"],["onderhoud","⚖️ Onderhoud"]].map(([val,lbl])=>
-                React.createElement("button",{key:val,onClick:()=>setGoalsDraft({...goalsDraft,goal:val}),style:{flex:1,padding:"9px 4px",borderRadius:8,border:`2px solid ${goalsDraft.goal===val?F.forest:F.border}`,background:goalsDraft.goal===val?F.mintbg:F.cream,color:goalsDraft.goal===val?F.forest:F.stone,fontSize:11,fontWeight:600,cursor:"pointer",fontFamily:"inherit"}},lbl)))),
-
-          // ── Maaltijden ──
-          React.createElement("div",{style:{background:F.warm,borderRadius:10,padding:"12px 14px"}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:700,color:F.forest,marginBottom:8}},"🍽️ Maaltijden per dag"),
-            React.createElement("div",{style:{display:"flex",gap:8}},
-              [3,4,5].map(n=>React.createElement("button",{key:n,onClick:()=>setGoalsDraft({...goalsDraft,mealsPerDay:n}),style:{flex:1,padding:"9px 4px",borderRadius:8,border:`2px solid ${goalsDraft.mealsPerDay===n?F.forest:F.border}`,background:goalsDraft.mealsPerDay===n?F.mintbg:F.cream,color:goalsDraft.mealsPerDay===n?F.forest:F.stone,fontSize:14,fontWeight:700,cursor:"pointer",fontFamily:"inherit"}},n,"×")))),
-
-          // ── Samenvatting ──
-          React.createElement("div",{style:{background:F.mintbg,borderRadius:8,padding:"10px 12px",fontSize:12,color:F.forest,lineHeight:1.7}},
-            React.createElement("strong",null,"Samenvatting: "),
-            goalsDraft.weight,"kg → ",goalsDraft.targetWeight,"kg · ",
-            goalsDraft.proteinMin,"–",goalsDraft.proteinMax,"g eiwit/dag · ",
-            goalsDraft.kcalTarget,"kcal · ",goalsDraft.fatTarget,"g vet · ",goalsDraft.carbTarget,"g koolh · ",
-            goalsDraft.activityLevel," activiteit · ",goalsDraft.goal)),
-
-        React.createElement("div",{style:{display:"flex",gap:8,marginTop:16}},
-          React.createElement("button",{onClick:()=>setShowGoals(false),style:{padding:"10px 16px",background:F.warm,color:F.stone,border:"none",borderRadius:8,fontFamily:"inherit",fontSize:13,cursor:"pointer"}},"Annuleren"),
-          React.createElement("button",{onClick:saveGoalsDraft,style:{flex:1,padding:10,background:F.forest,color:"#fff",border:"none",borderRadius:8,fontFamily:"inherit",fontSize:13,fontWeight:600,cursor:"pointer"}},"✓ Opslaan")),
-
-        // ── Back-up ──
-        React.createElement("div",{style:{marginTop:20,paddingTop:16,borderTop:`1px solid ${F.border}`}},
-          React.createElement("div",{style:{fontSize:13,fontWeight:700,color:F.forest,marginBottom:4}},"💾 Back-up"),
-          React.createElement("div",{style:{fontSize:11,color:F.stone,marginBottom:12,lineHeight:1.5}},"Sla al je producten, foto's en instellingen op als bestand, of zet een eerdere back-up terug."),
-          React.createElement("div",{style:{display:"flex",gap:8}},
-            React.createElement("button",{onClick:exportData,style:{flex:1,padding:"10px",background:F.sage,color:"#fff",border:"none",borderRadius:8,fontFamily:"inherit",fontSize:12,fontWeight:600,cursor:"pointer"}},"⬇️ Exporteren"),
-            React.createElement("button",{onClick:()=>document.getElementById("import-file").click(),style:{flex:1,padding:"10px",background:F.warm,color:F.forest,border:`1.5px solid ${F.mint}`,borderRadius:8,fontFamily:"inherit",fontSize:12,fontWeight:600,cursor:"pointer"}},"⬆️ Importeren"),
-            React.createElement("input",{id:"import-file",type:"file",accept:"application/json,.json",onChange:importData,style:{display:"none"}})),
-          backupMsg&&React.createElement("div",{style:{fontSize:11,color:backupMsg.startsWith("✓")?"#2E8B57":"#C0392B",marginTop:10,lineHeight:1.5}},backupMsg)))),
-
-    // ════════════════════════════════════════════════════════════════
-    // PRODUCT TOEVOEGEN PANEEL
-    // ════════════════════════════════════════════════════════════════
-    showAdd&&React.createElement("div",{onClick:e=>{if(e.target===e.currentTarget)setShowAdd(false);},style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",zIndex:200,display:"flex",alignItems:"center",justifyContent:"center",padding:16}},
-      React.createElement("div",{style:{background:"#fff",borderRadius:16,width:"100%",maxWidth:440,maxHeight:"92vh",overflowY:"auto",padding:20,boxShadow:"0 20px 60px rgba(0,0,0,0.25)"}},
-        React.createElement("div",{style:{fontSize:18,fontWeight:700,color:F.forest,marginBottom:4}},"➕ Product toevoegen"),
-        React.createElement("div",{style:{fontSize:12,color:F.stone,marginBottom:14}},"Voorkant voor het overzicht · Etiket voor voedingswaarden"),
-        React.createElement("button",{onClick:openBarcodeScanner,style:{width:"100%",padding:"13px",marginBottom:14,border:"none",borderRadius:10,background:F.forest,color:"#fff",fontFamily:"inherit",fontSize:15,fontWeight:700,cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center",gap:8}},
-          React.createElement("span",{style:{fontSize:18}},"📷")," Scan barcode"),
-        React.createElement("div",{style:{fontSize:11,color:F.stone,textAlign:"center",marginBottom:16,marginTop:-6}},"Zoekt automatisch in Open Food Facts database"),
-        React.createElement("div",{style:{display:"flex",gap:10,marginBottom:14}},
-          React.createElement(PhotoSlot,{img:imgFront,onFile:handleFrontPhoto,icon:"📦",label:"Voorkant",hint:"Zichtbaar in overzicht"}),
-          React.createElement(PhotoSlot,{img:imgLabel,onFile:handleLabelPhoto,icon:"🏷️",label:"Etiket",hint:"Achterkant verpakking"})),
-        scanDone&&React.createElement("div",{style:{background:F.mintbg,border:`1px solid ${F.mint}`,borderRadius:8,padding:"8px 12px",marginBottom:12,fontSize:12,color:F.forest}},"✅ ",React.createElement("strong",null,"Automatisch ingevuld")," — controleer en pas aan waar nodig."),
-        scanError&&React.createElement("div",{style:{background:"#fff0ee",border:"1px solid #fad7d2",borderRadius:8,padding:"8px 12px",marginBottom:12,fontSize:12,color:"#c0392b"}},"⚠️ ",scanError),
-        React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:10}},
-          ...[["Productnaam *","name","text","bijv. Tine Konsentrert Yoghurt"],["Merk","brand","text","bijv. Tine"],["Gebruik","use","text","bijv. Ontbijt met noten & zaden"]].map(([lbl,key,type,ph])=>
-            React.createElement(Field,{key,label:lbl},
-              React.createElement("input",{type,placeholder:ph,value:form[key]||"",onChange:e=>setForm({...form,[key]:e.target.value}),style:inp}))),
-          React.createElement(Field,{label:"Categorie"},
-            React.createElement("select",{value:form.cat||"zuivel",onChange:e=>setForm({...form,cat:e.target.value}),style:inp},
-              Object.entries(CAT_LABELS).map(([v,l])=>React.createElement("option",{key:v,value:v},l)))),
-          React.createElement("div",{style:{fontSize:10,fontWeight:700,color:F.forest,textTransform:"uppercase",letterSpacing:0.5}},"Voedingswaarden per 100g"),
-          React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:6}},
-            ...[["Eiwit (g)","protein"],["Vet (g)","fat"],["Koolh. (g)","carb"],["Suiker (g)","sugar"],["kcal","kcal"]].map(([lbl,key])=>
-              React.createElement(Field,{key,label:lbl},
-                React.createElement("input",{type:"number",placeholder:"0",value:form[key]??"",onChange:e=>setForm({...form,[key]:e.target.value}),style:{...inp,padding:"7px 8px"}})))),
-          React.createElement(Field,{label:"Notitie"},
-            React.createElement("input",{type:"text",placeholder:"bijv. Laktosevrij, veganistisch...",value:form.note||"",onChange:e=>setForm({...form,note:e.target.value}),style:inp})),
-          React.createElement(Field,{label:"E-nummers (uit ingrediënten)"},
-            React.createElement("input",{type:"text",placeholder:"bijv. E330, E385, E471",value:form.enumbers||"",onChange:e=>setForm({...form,enumbers:e.target.value}),style:inp}),
-            React.createElement(ETags,{enumbers:form.enumbers}))),
-        React.createElement("div",{style:{display:"flex",gap:8,marginTop:16}},
-          React.createElement("button",{onClick:()=>setShowAdd(false),style:{padding:"10px 16px",background:F.warm,color:F.stone,border:"none",borderRadius:8,fontFamily:"inherit",fontSize:13,cursor:"pointer"}},"Annuleren"),
-          React.createElement("button",{onClick:addProduct,disabled:!form.name,style:{flex:1,padding:10,background:form.name?F.forest:"#ccc",color:"#fff",border:"none",borderRadius:8,fontFamily:"inherit",fontSize:13,fontWeight:600,cursor:form.name?"pointer":"default"}},"✓ Opslaan")))),
-
-    // ════════════════════════════════════════════════════════════════
-    // DETAIL PANEEL
-    // ════════════════════════════════════════════════════════════════
-    detail&&React.createElement("div",{onClick:e=>{if(e.target===e.currentTarget){setDetail(null);setDetailAdvice("");}},style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",zIndex:200,display:"flex",alignItems:"center",justifyContent:"center",padding:16}},
-      React.createElement("div",{style:{background:"#fff",borderRadius:16,width:"100%",maxWidth:420,maxHeight:"90vh",overflowY:"auto",padding:20,boxShadow:"0 20px 60px rgba(0,0,0,0.25)"}},
-        detail.imgFront||detail.imgLabel
-          ?React.createElement("div",{style:{position:"relative",marginBottom:12}},
-              React.createElement("img",{src:detail.imgFront||detail.imgLabel,onClick:()=>setLightbox(detail.imgFront||detail.imgLabel),style:{width:"100%",height:190,objectFit:"cover",borderRadius:10,cursor:"zoom-in",display:"block"}}),
-              React.createElement("div",{style:{position:"absolute",bottom:8,right:8,background:"rgba(0,0,0,0.45)",color:"#fff",borderRadius:6,padding:"3px 8px",fontSize:10}},"🔍 Tik voor volledig beeld"))
-          :React.createElement("div",{style:{textAlign:"center",fontSize:52,marginBottom:12}},detail.emoji||"🫙"),
-        React.createElement("div",{style:{fontSize:10,fontWeight:600,color:F.stone,textTransform:"uppercase",letterSpacing:1}},CAT_LABELS[detail.cat],detail.brand?" · "+detail.brand:""),
-        React.createElement("div",{style:{fontSize:18,fontWeight:700,color:F.forest,margin:"5px 0 10px"}},detail.name),
-        React.createElement("div",{style:{display:"inline-flex",background:proteinColor(detail.protein),color:"#fff",fontSize:11,fontWeight:700,padding:"3px 10px",borderRadius:20,marginBottom:12}},detail.protein,"g eiwit per 100g"),
-        React.createElement("div",{style:{display:"grid",gridTemplateColumns:"repeat(4,1fr)",gap:7,marginBottom:12}},
-          [["Eiwit",detail.protein+"g",F.forest],["Vet",detail.fat+"g","#1E1E1E"],["Koolh.",detail.carb+"g","#1E1E1E"],["kcal",detail.kcal,"#1E1E1E"]].map(([l,v,c])=>
-            React.createElement("div",{key:l,style:{background:F.warm,borderRadius:7,padding:"8px 4px",textAlign:"center"}},
-              React.createElement("div",{style:{fontSize:15,fontWeight:700,color:c}},v),
-              React.createElement("div",{style:{fontSize:9,color:F.stone,marginTop:2}},l)))),
-        detail.imgLabel&&React.createElement("div",{style:{marginBottom:12}},
-          React.createElement("div",{style:{fontSize:10,fontWeight:600,color:F.stone,textTransform:"uppercase",letterSpacing:0.5,marginBottom:6}},"🏷️ Etiket"),
-          React.createElement("div",{style:{position:"relative",cursor:"zoom-in"},onClick:()=>setLightbox(detail.imgLabel)},
-            React.createElement("img",{src:detail.imgLabel,style:{width:"100%",maxHeight:200,objectFit:"contain",borderRadius:8,border:`1px solid ${F.border}`,display:"block",background:"#f9f9f9"}}),
-            React.createElement("div",{style:{position:"absolute",bottom:6,right:6,background:"rgba(0,0,0,0.45)",color:"#fff",borderRadius:5,padding:"2px 7px",fontSize:9}},"🔍 Tik voor volledig beeld"))),
-        detail.use&&React.createElement("div",{style:{background:F.mintbg,borderRadius:7,padding:"8px 11px",fontSize:12,color:F.forest,marginBottom:8}},"📍 ",detail.use),
-        detail.note&&React.createElement("div",{style:{fontSize:11,color:F.stone,fontStyle:"italic",lineHeight:1.5,marginBottom:10}},"💬 ",detail.note),
-        // E-nummers
-        (()=>{
-          const ens=parseENumbers(detail.enumbers);
-          if(ens.length===0) return null;
-          const reds=ens.filter(e=>e.rating==="red");
-          const yellows=ens.filter(e=>e.rating==="yellow");
-          const summary=reds.length>0?{color:"#C0392B",icon:"🔴",text:`${reds.length} toevoeging${reds.length>1?"en":""} om te vermijden`}
-            :yellows.length>0?{color:"#D4A017",icon:"🟡",text:`${yellows.length} toevoeging${yellows.length>1?"en":""} om te beperken`}
-            :{color:"#2E8B57",icon:"🟢",text:"Alle toevoegingen veilig"};
-          return React.createElement("div",{style:{border:`1.5px solid ${summary.color}`,borderRadius:9,padding:"11px 13px",marginBottom:12,background:summary.color+"0D"}},
-            React.createElement("div",{style:{display:"flex",alignItems:"center",gap:6,marginBottom:8}},
-              React.createElement("span",{style:{fontSize:14}},summary.icon),
-              React.createElement("span",{style:{fontSize:12,fontWeight:700,color:summary.color}},"E-nummers: ",summary.text)),
-            React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
-              ens.map(en=>React.createElement("div",{key:en.code,style:{display:"flex",alignItems:"flex-start",gap:7}},
-                React.createElement("span",{style:{width:9,height:9,borderRadius:"50%",background:eRatingColor(en.rating),marginTop:3,flexShrink:0}}),
-                React.createElement("div",{style:{flex:1}},
-                  React.createElement("div",{style:{fontSize:12}},
-                    React.createElement("strong",{style:{color:eRatingColor(en.rating)}},en.code),
-                    React.createElement("span",{style:{color:"#1E1E1E"}}," · ",en.name),
-                    React.createElement("span",{style:{color:eRatingColor(en.rating),fontSize:10,fontWeight:600,marginLeft:6}},eRatingLabel(en.rating))),
-                  React.createElement("div",{style:{fontSize:11,color:F.stone,lineHeight:1.4}},en.desc))))));
-        })(),
-        // ── PERSOONLIJK ADVIES (regel-gebaseerd) ──
-        detailAdvice&&React.createElement(AdviceBlock,{advice:detailAdvice}),
-        React.createElement("div",{style:{display:"flex",gap:8}},
-          React.createElement("button",{onClick:()=>{setDetail(null);setDetailAdvice("");},style:{flex:1,padding:10,background:F.warm,color:F.stone,border:"none",borderRadius:8,fontFamily:"inherit",fontSize:13,cursor:"pointer"}},"Sluiten"),
-          React.createElement("button",{onClick:()=>openEdit(detail),style:{padding:"10px 14px",background:F.mintbg,color:F.forest,border:`1.5px solid ${F.mint}`,borderRadius:8,fontFamily:"inherit",fontSize:13,cursor:"pointer",fontWeight:600}},"✏️"),
-          React.createElement("button",{onClick:()=>deleteProduct(detail.id),style:{padding:"10px 14px",background:"#fff0ee",color:"#c0392b",border:"1.5px solid #fad7d2",borderRadius:8,fontFamily:"inherit",fontSize:13,cursor:"pointer"}},"🗑")))),
-
-    // ════════════════════════════════════════════════════════════════
-    // FLOATING SNACK BUTTON
-    // ════════════════════════════════════════════════════════════════
-    React.createElement("button",{
-      onClick: generateSnack,
-      style:{
-        position:"fixed", bottom:"calc(24px + env(safe-area-inset-bottom))", right:20,
-        zIndex:300, background:F.forest, color:"#fff", border:"none",
-        borderRadius:28, padding:"14px 20px", fontSize:14, fontWeight:700,
-        fontFamily:"inherit", cursor:"pointer", display:"flex", alignItems:"center", gap:8,
-        boxShadow:"0 6px 24px rgba(10,42,74,0.35)",
-        letterSpacing:0.2
-      }
-    }, React.createElement("span",{style:{fontSize:20}},"🍎"), "Stel snack voor"),
-
-    // ════════════════════════════════════════════════════════════════
-    // SNACK POPUP
-    // ════════════════════════════════════════════════════════════════
-    snackOpen&&React.createElement("div",{
-      onClick:e=>{ if(e.target===e.currentTarget) setSnackOpen(false); },
-      style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.55)",zIndex:400,display:"flex",alignItems:"flex-end",justifyContent:"center",padding:"0 0 env(safe-area-inset-bottom)"}
-    },
-      React.createElement("div",{style:{background:"#fff",borderRadius:"20px 20px 0 0",width:"100%",maxWidth:480,maxHeight:"82vh",overflowY:"auto",padding:24,boxShadow:"0 -8px 40px rgba(0,0,0,0.2)"}},
-
-        // Error state
-        snackResult?.error && React.createElement("div",null,
-          React.createElement("div",{style:{fontSize:17,fontWeight:700,color:F.forest,marginBottom:12}},"🍎 Snack suggestie"),
-          React.createElement("div",{style:{fontSize:13,color:F.stone,lineHeight:1.6}},snackResult.error),
-          React.createElement("button",{onClick:()=>setSnackOpen(false),style:{marginTop:16,width:"100%",padding:"11px",background:F.warm,color:F.stone,border:"none",borderRadius:10,fontFamily:"inherit",fontSize:13,cursor:"pointer"}},"Sluiten")),
-
-        // Success state
-        snackResult&&!snackResult.error&&React.createElement("div",null,
-
-          // Tijdslot header
-          React.createElement("div",{style:{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:4}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:600,color:F.stone,textTransform:"uppercase",letterSpacing:1}},
-              "🕐 ",snackResult.slotLabel," · ",snackResult.hour,":00 uur"),
-            React.createElement("button",{onClick:()=>setSnackOpen(false),style:{background:"none",border:"none",fontSize:20,cursor:"pointer",color:F.stone,padding:0,lineHeight:1}},"✕")),
-
-          React.createElement("div",{style:{fontSize:18,fontWeight:700,color:F.forest,marginBottom:16}},"Aanbevolen snack"),
-
-          // Product kaartje
-          React.createElement("div",{style:{background:F.mintbg,border:`1.5px solid ${F.mint}`,borderRadius:14,overflow:"hidden",marginBottom:16}},
-            snackResult.pick.imgFront && React.createElement("img",{
-              src:snackResult.pick.imgFront,
-              style:{width:"100%",height:160,objectFit:"cover",display:"block"}
-            }),
-            React.createElement("div",{style:{padding:"14px 16px"}},
-              React.createElement("div",{style:{fontSize:10,fontWeight:600,color:F.stone,textTransform:"uppercase",letterSpacing:1,marginBottom:4}},CAT_LABELS[snackResult.pick.cat]),
-              React.createElement("div",{style:{fontSize:20,fontWeight:700,color:F.forest,marginBottom:2}},snackResult.pick.name),
-              snackResult.pick.brand&&React.createElement("div",{style:{fontSize:12,color:F.stone,marginBottom:10}},snackResult.pick.brand),
-
-              // Portie highlight
-              React.createElement("div",{style:{background:F.forest,borderRadius:10,padding:"12px 16px",marginBottom:12,display:"flex",alignItems:"center",gap:14}},
-                React.createElement("div",{style:{fontSize:36,fontWeight:900,color:"#fff",lineHeight:1}},snackResult.portie,"g"),
-                React.createElement("div",null,
-                  snackResult.portieProt!=null&&React.createElement("div",{style:{fontSize:13,color:F.mint,fontWeight:700}},"→ "+snackResult.portieProt+"g eiwit"),
-                  snackResult.portieKcal!=null&&React.createElement("div",{style:{fontSize:12,color:"rgba(255,255,255,0.7)"}},"→ "+snackResult.portieKcal+" kcal"),
-                  React.createElement("div",{style:{fontSize:11,color:"rgba(255,255,255,0.6)",marginTop:2}},"Budget: "+snackResult.snackKcalBudget+" kcal / "+snackResult.snackProteinTarget+"g eiwit"))),
-
-              // Reden
-              React.createElement("div",{style:{fontSize:12,color:F.forest,lineHeight:1.6,background:"rgba(255,255,255,0.7)",borderRadius:8,padding:"9px 11px"}},
-                "💡 ",snackResult.fitMsg))),
-
-          // Andere opties
-          snackResult.top.length>1&&React.createElement("div",{style:{marginBottom:16}},
-            React.createElement("div",{style:{fontSize:11,fontWeight:600,color:F.stone,textTransform:"uppercase",letterSpacing:0.8,marginBottom:8}},"Ook geschikt:"),
-            React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:6}},
-              snackResult.top.filter(p=>p.id!==snackResult.pick.id).map(p=>
-                React.createElement("div",{key:p.id,
-                  onClick:()=>{
-                    // Herbereken portie voor dit alternatief
-                    const prot2=parseFloat(p.protein)||0;
-                    let portie2=prot2>0?Math.round((snackResult.snackProteinTarget/prot2)*100):100;
-                    portie2=Math.max(30,Math.min(500,portie2));
-                    setSnackResult({...snackResult,
-                      pick:p, portie:portie2,
-                      portieKcal:p.kcal>0?Math.round((portie2/100)*p.kcal):null,
-                      portieProt:prot2>0?Math.round((portie2/100)*prot2):null
-                    });
-                  },
-                  style:{background:F.warm,border:`1px solid ${F.border}`,borderRadius:10,padding:"10px 14px",display:"flex",alignItems:"center",gap:12,cursor:"pointer"}},
-                  p.imgFront
-                    ?React.createElement("img",{src:p.imgFront,style:{width:44,height:44,objectFit:"cover",borderRadius:8,flexShrink:0}})
-                    :React.createElement("div",{style:{width:44,height:44,background:F.mintbg,borderRadius:8,display:"flex",alignItems:"center",justifyContent:"center",fontSize:20,flexShrink:0}},p.emoji||"🫙"),
-                  React.createElement("div",null,
-                    React.createElement("div",{style:{fontSize:13,fontWeight:700,color:F.forest}},p.name),
-                    React.createElement("div",{style:{fontSize:11,color:F.stone}},p.protein,"g eiwit/100g · Tik om te kiezen")))))),
-
-          // Opnieuw / sluiten knoppen
-          React.createElement("div",{style:{display:"flex",gap:8}},
-            React.createElement("button",{onClick:generateSnack,style:{flex:1,padding:"12px",background:F.mintbg,color:F.forest,border:`1.5px solid ${F.mint}`,borderRadius:10,fontFamily:"inherit",fontSize:13,fontWeight:600,cursor:"pointer"}},"🔄 Andere suggestie"),
-            React.createElement("button",{onClick:()=>setSnackOpen(false),style:{flex:1,padding:"12px",background:F.forest,color:"#fff",border:"none",borderRadius:10,fontFamily:"inherit",fontSize:13,fontWeight:600,cursor:"pointer"}},"✓ Klaar")))))
-    // ════════════════════════════════════════════════════════════════
-    showEdit&&editProduct&&React.createElement("div",{onClick:e=>{if(e.target===e.currentTarget)setShowEdit(false);},style:{position:"fixed",inset:0,background:"rgba(0,0,0,0.5)",zIndex:200,display:"flex",alignItems:"center",justifyContent:"center",padding:16}},
-      React.createElement("div",{style:{background:"#fff",borderRadius:16,width:"100%",maxWidth:440,maxHeight:"92vh",overflowY:"auto",padding:20,boxShadow:"0 20px 60px rgba(0,0,0,0.25)"}},
-        React.createElement("div",{style:{fontSize:18,fontWeight:700,color:F.forest,marginBottom:4}},"✏️ Product bewerken"),
-        React.createElement("div",{style:{fontSize:12,color:F.stone,marginBottom:16}},"Vervang foto's of pas gegevens aan."),
-        React.createElement("div",{style:{display:"flex",gap:10,marginBottom:14}},
-          React.createElement("div",{style:{flex:1,display:"flex",flexDirection:"column",gap:6}},
-            React.createElement("div",{style:{fontSize:10,fontWeight:700,color:F.forest,textTransform:"uppercase",letterSpacing:0.5}},"📦 Voorkant"),
-            React.createElement("label",{style:{cursor:"pointer",display:"block"}},
-              editImgFront
-                ?React.createElement("div",null,
-                    React.createElement("img",{src:editImgFront,style:{width:"100%",height:130,objectFit:"cover",borderRadius:8,border:`2px solid ${F.mint}`,display:"block"}}),
-                    React.createElement("div",{style:{textAlign:"center",marginTop:4,fontSize:10,color:F.forest,fontWeight:600}},"📷 Tik om te vervangen"))
-                :React.createElement("div",{style:{border:`2px dashed ${F.mint}`,borderRadius:8,height:130,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:4,background:F.mintbg,color:F.sage}},
-                    React.createElement("div",{style:{fontSize:24}},"📷"),
-                    React.createElement("div",{style:{fontSize:11,fontWeight:600}},"Voorkant toevoegen")),
-              React.createElement("input",{type:"file",accept:"image/*",capture:"environment",onChange:handleEditFrontPhoto,style:{display:"none"}}))),
-          React.createElement("div",{style:{flex:1,display:"flex",flexDirection:"column",gap:6}},
-            React.createElement("div",{style:{fontSize:10,fontWeight:700,color:F.forest,textTransform:"uppercase",letterSpacing:0.5}},"🏷️ Etiket"),
-            React.createElement("label",{style:{cursor:"pointer",display:"block"}},
-              editImgLabel
-                ?React.createElement("div",null,
-                    React.createElement("img",{src:editImgLabel,style:{width:"100%",height:130,objectFit:"cover",borderRadius:8,border:`2px solid ${F.mint}`,display:"block"}}),
-                    React.createElement("div",{style:{textAlign:"center",marginTop:4,fontSize:10,color:F.forest,fontWeight:600}},"📷 Tik om te vervangen"))
-                :React.createElement("div",{style:{border:`2px dashed ${F.mint}`,borderRadius:8,height:130,display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",gap:4,background:F.mintbg,color:F.sage}},
-                    React.createElement("div",{style:{fontSize:24}},"🏷️"),
-                    React.createElement("div",{style:{fontSize:11,fontWeight:600}},"Etiket toevoegen")),
-              React.createElement("input",{type:"file",accept:"image/*",capture:"environment",onChange:handleEditLabelPhoto,style:{display:"none"}})))),
-        React.createElement("div",{style:{display:"flex",flexDirection:"column",gap:10}},
-          ...[["Productnaam *","name","text",""],["Merk","brand","text",""],["Gebruik","use","text",""]].map(([lbl,key,type,ph])=>
-            React.createElement(Field,{key,label:lbl},
-              React.createElement("input",{type,placeholder:ph,value:editForm[key]||"",onChange:e=>setEditForm({...editForm,[key]:e.target.value}),style:inp}))),
-          React.createElement(Field,{label:"Categorie"},
-            React.createElement("select",{value:editForm.cat||"overig",onChange:e=>setEditForm({...editForm,cat:e.target.value}),style:inp},
-              Object.entries(CAT_LABELS).map(([v,l])=>React.createElement("option",{key:v,value:v},l)))),
-          React.createElement("div",{style:{fontSize:10,fontWeight:700,color:F.forest,textTransform:"uppercase",letterSpacing:0.5}},"Voedingswaarden per 100g"),
-          React.createElement("div",{style:{display:"grid",gridTemplateColumns:"1fr 1fr 1fr",gap:6}},
-            ...[["Eiwit (g)","protein"],["Vet (g)","fat"],["Koolh. (g)","carb"],["Suiker (g)","sugar"],["kcal","kcal"]].map(([lbl,key])=>
-              React.createElement(Field,{key,label:lbl},
-                React.createElement("input",{type:"number",value:editForm[key]??"",onChange:e=>setEditForm({...editForm,[key]:e.target.value}),style:{...inp,padding:"7px 8px"}})))),
-          React.createElement(Field,{label:"Notitie"},
-            React.createElement("input",{type:"text",value:editForm.note||"",onChange:e=>setEditForm({...editForm,note:e.target.value}),style:inp})),
-          React.createElement(Field,{label:"E-nummers (uit ingrediënten)"},
-            React.createElement("input",{type:"text",placeholder:"bijv. E330, E385, E471",value:editForm.enumbers||"",onChange:e=>setEditForm({...editForm,enumbers:e.target.value}),style:inp}),
-            React.createElement(ETags,{enumbers:editForm.enumbers}))),
-        React.createElement("div",{style:{display:"flex",gap:8,marginTop:16}},
-          React.createElement("button",{onClick:()=>setShowEdit(false),style:{padding:"10px 16px",background:F.warm,color:F.stone,border:"none",borderRadius:8,fontFamily:"inherit",fontSize:13,cursor:"pointer"}},"Annuleren"),
-          React.createElement("button",{onClick:saveEdit,disabled:!editForm.name,style:{flex:1,padding:10,background:editForm.name?F.forest:"#ccc",color:"#fff",border:"none",borderRadius:8,fontFamily:"inherit",fontSize:13,fontWeight:600,cursor:editForm.name?"pointer":"default"}},"✓ Opslaan")))));
+  scored.sort(function(a,b){ return b._score-a._score; });
+  var top=scored.slice(0,Math.min(3,scored.length));
+  var pick=top[Math.floor(Math.random()*top.length)];
+  var prot=parseFloat(pick.protein)||0;
+  var portie=prot>0?Math.round((snackProteinTarget/prot)*100):100;
+  portie=Math.max(30,Math.min(500,portie));
+  var portieKcal=pick.kcal>0?Math.round((portie/100)*pick.kcal):null;
+  var portieProt=prot>0?Math.round((portie/100)*prot):null;
+  var slotLabel={ontbijt:"ontbijt",ochtendsnack:"ochtendsnack",lunch:"lunch",middagsnack:"middagsnack",avondeten:"avondeten",avondsnack:"avondsnack",nachtsnack:"late snack"}[slot];
+  var fitMsg=goals.goal==="afvallen"?"Past bij afvallen: beperkt in calorieën en levert goed eiwit.":goals.goal==="spiermassa"?"Goed voor spiermassa: hoog eiwit ondersteunt spierherstel.":"Goede keuze voor onderhoud: evenwichtige macro's.";
+  return {pick:pick,portie:portie,portieKcal:portieKcal,portieProt:portieProt,slotLabel:slotLabel,snackKcalBudget:snackKcalBudget,snackProteinTarget:snackProteinTarget,fitMsg:fitMsg,hour:hour,top:top};
 }
 
-    var root = ReactDOM.createRoot(document.getElementById("root"));
-    root.render(React.createElement(App));
-  } catch(err) {
-    showError((err&&err.message?err.message:String(err))+"\n\n"+(err&&err.stack?err.stack:""));
+// ══════════════════════════════════════════════════════════════════
+// IMAGE HELPERS
+// ══════════════════════════════════════════════════════════════════
+function fileToBase64(file){
+  return new Promise(function(resolve){ var r=new FileReader(); r.onload=function(e){ resolve(e.target.result); }; r.readAsDataURL(file); });
+}
+function compressImage(dataUrl,maxSize,quality){
+  maxSize=maxSize||300; quality=quality||0.78;
+  return new Promise(function(resolve){
+    var img=new Image();
+    img.onload=function(){
+      var scale=Math.min(maxSize/img.width,maxSize/img.height,1);
+      var c=document.createElement("canvas"); c.width=Math.round(img.width*scale); c.height=Math.round(img.height*scale);
+      c.getContext("2d").drawImage(img,0,0,c.width,c.height);
+      resolve(c.toDataURL("image/jpeg",quality));
+    };
+    img.src=dataUrl;
+  });
+}
+
+// ══════════════════════════════════════════════════════════════════
+// BARCODE / OPEN FOOD FACTS
+// ══════════════════════════════════════════════════════════════════
+function mapOFFProduct(data){
+  if(!data||data.status!==1||!data.product) return null;
+  var p=data.product, n=p.nutriments||{};
+  function num(v){ var x=parseFloat(v); return isNaN(x)?"":Math.round(x*10)/10; }
+  function guessCat(p2){
+    var cats=(p2.categories_tags||[]).join(" ").toLowerCase();
+    var name=(p2.product_name||"").toLowerCase();
+    var s=cats+" "+name;
+    if(/yogh|yogurt|kvarg|kwark|melk|milk|cheese|ost|dairy|skyr/.test(s)) return "zuivel";
+    if(/protein|meat|fish|egg|kj.tt|fisk|kylling|chicken|salmon/.test(s)) return "eiwit";
+    if(/butter|margarin|mayo|spread|jam|peanut|sm.r|p.legg/.test(s)) return "broodbeleg";
+    if(/veget|fruit|gr.nnsak/.test(s)) return "groenten";
+    if(/bread|pasta|br.d/.test(s)) return "granen";
+    return "overig";
   }
+  var enumbers="";
+  if(Array.isArray(p.additives_tags)) enumbers=p.additives_tags.map(function(t){ return t.replace(/^en:/,"").toUpperCase(); }).filter(function(c){ return /^E\d/.test(c); }).join(", ");
+  return {name:p.product_name||p.product_name_nb||p.product_name_en||"",brand:(p.brands||"").split(",")[0].trim(),cat:guessCat(p),protein:num(n.proteins_100g),fat:num(n.fat_100g),carb:num(n.carbohydrates_100g),sugar:num(n.sugars_100g),kcal:n["energy-kcal_100g"]!=null?Math.round(n["energy-kcal_100g"]):"",enumbers:enumbers,note:p.quantity?"Verpakking: "+p.quantity:""};
+}
+async function lookupBarcode(code){
+  var url="https://world.openfoodfacts.org/api/v2/product/"+encodeURIComponent(code)+".json";
+  var res; try{ res=await fetch(url); }catch(e){ throw new Error("Geen internetverbinding"); }
+  if(res.status===404) throw new Error("Niet gevonden in Open Food Facts — vul handmatig in");
+  if(!res.ok) throw new Error("Database niet bereikbaar ("+res.status+")");
+  var data; try{ data=await res.json(); }catch(e){ throw new Error("Antwoord onleesbaar"); }
+  if(data.status===0||!data.product) throw new Error("Niet gevonden in Open Food Facts — vul handmatig in");
+  var mapped=mapOFFProduct(data);
+  if(!mapped) throw new Error("Niet gevonden in Open Food Facts — vul handmatig in");
+  return mapped;
 }
 
-(function loadBarcodeLib(){
+// ══════════════════════════════════════════════════════════════════
+// APP STATE
+// ══════════════════════════════════════════════════════════════════
+var state = {
+  products:[], goals:Object.assign({},DEFAULT_GOALS), loaded:false,
+  filter:"all", search:"",
+  showAdd:false, showGoals:false, showEdit:false,
+  editProduct:null, editForm:{}, editImgFront:null, editImgLabel:null,
+  detail:null, detailAdvice:[],
+  lightbox:null,
+  form:{cat:"zuivel"}, imgFront:null, imgLabel:null,
+  scanning:false, barcodeOpen:false, barcodeStatus:"",
+  backupMsg:"", scanDone:false, scanError:"",
+  goalsDraft:Object.assign({},DEFAULT_GOALS),
+  saveErr:"", snackResult:null, snackOpen:false
+};
+var scannerRef=null;
+
+function setState(patch){
+  Object.assign(state,patch);
+  render();
+}
+
+// ══════════════════════════════════════════════════════════════════
+// PERSIST
+// ══════════════════════════════════════════════════════════════════
+function persist(prods){
+  var ok=storage.set("proteincheck-products",JSON.stringify(prods));
+  if(!ok) setState({saveErr:"Opslag vol — maak een back-up en verwijder oude producten"});
+}
+
+// ══════════════════════════════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════════════════════════════
+(function init(){
+  var pr=storage.get("proteincheck-products");
+  var gr=storage.get("proteincheck-goals");
+  var products=[];
+  if(pr && pr.value){
+    try{ products=JSON.parse(pr.value); }catch(e){}
+  }
+  var goals=Object.assign({},DEFAULT_GOALS);
+  if(gr && gr.value){
+    try{ goals=Object.assign({},DEFAULT_GOALS,JSON.parse(gr.value)); }catch(e){}
+  }
+  // Try seed file async
+  if(!products.length){
+    fetch("producten.json?t="+Date.now()).then(function(r){ return r.ok?r.json():Promise.reject(); }).then(function(seed){
+      if(Array.isArray(seed)&&seed.length){ persist(seed); setState({products:seed,goals:goals,loaded:true}); }
+      else setState({products:[],goals:goals,loaded:true});
+    }).catch(function(){ setState({products:[],goals:goals,loaded:true}); });
+  } else {
+    setState({products:products,goals:goals,loaded:true});
+  }
+})();
+
+// ══════════════════════════════════════════════════════════════════
+// BARCODE SCANNER
+// ══════════════════════════════════════════════════════════════════
+async function openBarcodeScanner(){
+  setState({barcodeOpen:true,barcodeStatus:"Camera starten..."});
+  setTimeout(async function(){
+    if(typeof Html5Qrcode==="undefined"){ setState({barcodeStatus:"Scanner niet beschikbaar. Controleer je internetverbinding."}); return; }
+    try{
+      var scanner=new Html5Qrcode("barcode-reader"); scannerRef=scanner;
+      setState({barcodeStatus:"Richt op de streepjescode..."});
+      await scanner.start({facingMode:"environment"},{fps:10,qrbox:{width:250,height:150}},
+        async function(code){ await stopBarcodeScanner(); setState({barcodeOpen:false,barcodeStatus:""}); await handleBarcodeResult(code); },
+        function(){}
+      );
+    }catch(err){ setState({barcodeStatus:"Camera kon niet starten: "+(err.message||err)}); }
+  },300);
+}
+async function stopBarcodeScanner(){
+  if(scannerRef){ try{ await scannerRef.stop(); scannerRef.clear(); }catch(e){} scannerRef=null; }
+}
+async function closeBarcodeScanner(){ await stopBarcodeScanner(); setState({barcodeOpen:false,barcodeStatus:""}); }
+async function handleBarcodeResult(code){
+  setState({scanning:true,scanError:""});
+  try{
+    var result=await lookupBarcode(code);
+    var form=Object.assign({},state.form);
+    Object.keys(result).forEach(function(k){ if(result[k]!=="") form[k]=result[k]; });
+    setState({form:form,scanDone:true,scanning:false});
+  }catch(err){ setState({scanError:err.message||"Barcode niet herkend — vul handmatig in",scanning:false}); }
+}
+
+// ══════════════════════════════════════════════════════════════════
+// PRODUCT ACTIONS
+// ══════════════════════════════════════════════════════════════════
+async function handlePhoto(e, key){
+  var file=e.target.files[0]; if(!file) return;
+  var dataUrl=await fileToBase64(file);
+  var compressed=await compressImage(dataUrl, key==="front"?320:400, key==="front"?0.78:0.82);
+  if(key==="front") setState({imgFront:compressed});
+  else setState({imgLabel:compressed,scanDone:false,scanError:""});
+}
+async function handleEditPhoto(e, key){
+  var file=e.target.files[0]; if(!file) return;
+  var dataUrl=await fileToBase64(file);
+  var compressed=await compressImage(dataUrl,320,0.78);
+  if(key==="front") setState({editImgFront:compressed});
+  else setState({editImgLabel:compressed});
+}
+function addProduct(){
+  var f=state.form;
+  if(!f.name) return;
+  var p={id:Date.now(),name:f.name,brand:f.brand||"",cat:f.cat||"overig",use:f.use||"",protein:parseFloat(f.protein)||0,fat:parseFloat(f.fat)||0,carb:parseFloat(f.carb)||0,sugar:parseFloat(f.sugar)||0,kcal:parseInt(f.kcal)||0,note:f.note||"",enumbers:f.enumbers||"",imgFront:state.imgFront||null,imgLabel:state.imgLabel||null,emoji:"🫙"};
+  var updated=state.products.concat([p]);
+  persist(updated);
+  setState({products:updated,showAdd:false,form:{cat:"zuivel"},imgFront:null,imgLabel:null,scanDone:false,scanError:""});
+}
+function saveEdit(){
+  var f=state.editForm, ep=state.editProduct;
+  if(!f.name||!ep) return;
+  var updated=state.products.map(function(p){
+    if(p.id!==ep.id) return p;
+    return Object.assign({},p,{name:f.name,brand:f.brand||"",cat:f.cat,use:f.use||"",protein:parseFloat(f.protein)||0,fat:parseFloat(f.fat)||0,carb:parseFloat(f.carb)||0,sugar:parseFloat(f.sugar)||0,kcal:parseInt(f.kcal)||0,note:f.note||"",enumbers:f.enumbers||"",imgFront:state.editImgFront||p.imgFront||null,imgLabel:state.editImgLabel||p.imgLabel||null});
+  });
+  persist(updated);
+  setState({products:updated,showEdit:false,editProduct:null});
+}
+function deleteProduct(id){
+  var updated=state.products.filter(function(p){ return p.id!==id; });
+  persist(updated);
+  setState({products:updated,detail:null,detailAdvice:[]});
+}
+function openDetail(p){
+  setState({detail:p,detailAdvice:generateAdvice(p,state.goals)});
+}
+function openEdit(p){
+  setState({editProduct:p,editForm:{name:p.name,brand:p.brand,cat:p.cat,use:p.use||"",protein:p.protein,fat:p.fat,carb:p.carb,sugar:p.sugar,kcal:p.kcal,note:p.note||"",enumbers:p.enumbers||""},editImgFront:p.imgFront||null,editImgLabel:p.imgLabel||null,detail:null,detailAdvice:[],showEdit:true});
+}
+function saveGoals(){
+  var g=state.goalsDraft;
+  storage.set("proteincheck-goals",JSON.stringify(g));
+  setState({goals:g,showGoals:false});
+}
+function doSnack(){
+  var result=generateSnack(state.products,state.goals);
+  setState({snackResult:result,snackOpen:true});
+}
+function pickAlt(altProduct){
+  var sr=state.snackResult;
+  var prot=parseFloat(altProduct.protein)||0;
+  var portie=prot>0?Math.round((sr.snackProteinTarget/prot)*100):100;
+  portie=Math.max(30,Math.min(500,portie));
+  setState({snackResult:Object.assign({},sr,{pick:altProduct,portie:portie,portieKcal:altProduct.kcal>0?Math.round((portie/100)*altProduct.kcal):null,portieProt:prot>0?Math.round((portie/100)*prot):null})});
+}
+function exportData(){
+  try{
+    var blob=new Blob([JSON.stringify({app:"ProteinCheck",version:2,exportedAt:new Date().toISOString(),products:state.products,goals:state.goals})],{type:"application/json"});
+    var url=URL.createObjectURL(blob), a=document.createElement("a");
+    a.href=url; a.download="proteincheck-backup-"+new Date().toISOString().slice(0,10)+".json";
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); },1000);
+    setState({backupMsg:"✓ Back-up gemaakt — bewaar in iCloud of Bestanden"});
+  }catch(e){ setState({backupMsg:"Exporteren mislukt"}); }
+}
+function importData(e){
+  var file=e.target&&e.target.files&&e.target.files[0]; if(!file) return;
+  var reader=new FileReader();
+  reader.onload=function(ev){
+    try{
+      var data=JSON.parse(ev.target.result);
+      var prods=Array.isArray(data)?data:Array.isArray(data.products)?data.products:null;
+      if(!prods){ setState({backupMsg:"Geen producten gevonden in dit bestand"}); return; }
+      persist(prods);
+      var importedGoals=data.goals?Object.assign({},DEFAULT_GOALS,data.goals):state.goals;
+      if(data.goals) storage.set("proteincheck-goals",JSON.stringify(importedGoals));
+      setState({products:prods,goals:importedGoals,backupMsg:"✓ "+prods.length+" producten geladen"});
+    }catch(err){ setState({backupMsg:"Importeren mislukt: bestand onleesbaar"}); }
+  };
+  reader.readAsText(file); e.target.value="";
+}
+
+// ══════════════════════════════════════════════════════════════════
+// HTML HELPERS
+// ══════════════════════════════════════════════════════════════════
+function h(tag,attrs,children){
+  var el=document.createElement(tag);
+  if(attrs) Object.keys(attrs).forEach(function(k){
+    if(k==="style"&&typeof attrs[k]==="object"){ Object.assign(el.style,attrs[k]); }
+    else if(k.startsWith("on")){ el.addEventListener(k.slice(2).toLowerCase(),attrs[k]); }
+    else if(k==="className"){ el.className=attrs[k]; }
+    else if(k==="htmlFor"){ el.htmlFor=attrs[k]; }
+    else if(k==="checked"){ el.checked=attrs[k]; }
+    else if(k==="disabled"){ if(attrs[k]) el.disabled=true; }
+    else if(k==="value"&&(tag==="INPUT"||tag==="input"||tag==="SELECT"||tag==="select")){ el.value=attrs[k]!=null?attrs[k]:""; }
+    else{ try{ el.setAttribute(k,attrs[k]); }catch(e){} }
+  });
+  if(children){
+    if(!Array.isArray(children)) children=[children];
+    children.forEach(function(c){
+      if(c==null||c===false||c===undefined) return;
+      if(typeof c==="string"||typeof c==="number"){ el.appendChild(document.createTextNode(c)); }
+      else if(c instanceof Node){ el.appendChild(c); }
+    });
+  }
+  return el;
+}
+function div(cls,children,extra){ return h("div",Object.assign({className:cls},extra),children); }
+function btn(cls,txt,onClick){ return h("button",{className:cls,onClick:onClick},[txt]); }
+function frag(children){
+  var f=document.createDocumentFragment();
+  if(!Array.isArray(children)) children=[children];
+  children.forEach(function(c){ if(c instanceof Node) f.appendChild(c); });
+  return f;
+}
+
+// ══════════════════════════════════════════════════════════════════
+// RENDER HELPERS
+// ══════════════════════════════════════════════════════════════════
+function renderETags(enumbers){
+  var ens=parseENumbers(enumbers||"");
+  if(!ens.length) return null;
+  var wrap=div("e-tags");
+  ens.forEach(function(en){
+    var col=eColor(en.rating);
+    var tag=div("e-tag",[
+      h("span",{className:"e-tag-dot",style:{background:col}}),
+      h("strong",{style:{color:col}},[en.code]),
+      h("span",{style:{color:"#5D7A8A",fontSize:"10px"}},[" "+en.name])
+    ],{style:{background:col+"18",borderColor:col}});
+    wrap.appendChild(tag);
+  });
+  return wrap;
+}
+
+function renderPhotoSlot(img,onFile,icon,label,hint){
+  var inputId="ph-"+Math.random().toString(36).slice(2);
+  var inp=h("input",{type:"file",accept:"image/*",capture:"environment",id:inputId,style:{display:"none"},onChange:onFile});
+  var content;
+  if(img){
+    content=h("label",{htmlFor:inputId},[
+      h("img",{src:img,className:"photo-preview"}),
+      div("photo-change",["Tik om te wijzigen"])
+    ]);
+  } else {
+    content=h("label",{htmlFor:inputId},[
+      div("photo-hint",[
+        div("photo-hint-icon",[icon]),
+        div("photo-hint-text",[label]),
+        div("photo-hint-sub",[hint])
+      ])
+    ]);
+  }
+  var slot=div("photo-slot",[
+    div("photo-slot-label",[icon+" "+label]),
+    content, inp
+  ]);
+  return slot;
+}
+
+function renderField(label,inputEl){
+  return div("field",[
+    div("field-label",[label]),
+    inputEl
+  ]);
+}
+
+function makeInput(type,placeholder,value,onInput,extraClass){
+  var el=h("input",{type:type||"text",placeholder:placeholder||"",className:"inp"+(extraClass?" "+extraClass:"")});
+  if(value!=null) el.value=value;
+  el.addEventListener("input",function(){ onInput(el.value); });
+  return el;
+}
+function makeSelect(options,value,onChange){
+  var sel=h("select",{className:"inp"});
+  options.forEach(function(opt){
+    var o=h("option",{value:opt[0]},[opt[1]]);
+    if(opt[0]===value) o.selected=true;
+    sel.appendChild(o);
+  });
+  sel.addEventListener("change",function(){ onChange(sel.value); });
+  return sel;
+}
+
+function renderProductCard(p){
+  var barPct=Math.min(100,p.protein/30*100);
+  var ens=parseENumbers(p.enumbers||"");
+  var reds=ens.filter(function(e){ return e.rating==="red"; }).length;
+  var yellows=ens.filter(function(e){ return e.rating==="yellow"; }).length;
+  var card=div("card");
+  card.addEventListener("click",function(){ openDetail(p); });
+  if(p.imgFront){ card.appendChild(h("img",{src:p.imgFront,className:"card-img"})); }
+  else { card.appendChild(div("card-emoji",[p.emoji||"🫙"])); }
+  var bar=div("card-bar");
+  bar.style.background="linear-gradient(90deg,"+protColor(p.protein)+" "+barPct+"%,#C8DCE8 "+barPct+"%)";
+  card.appendChild(bar);
+  var body=div("card-body",[
+    div("card-cat",[CAT_LABELS[p.cat]||p.cat]),
+    div("card-name",[p.name])
+  ]);
+  var protBadge=div("card-prot",[p.protein+"g eiwit/100g"]);
+  protBadge.style.background=protColor(p.protein);
+  body.appendChild(protBadge);
+  var macros=div("card-macros");
+  [["Vet",p.fat+"g"],["Koolh",p.carb+"g"],["kcal",p.kcal]].forEach(function(m){
+    macros.appendChild(div("macro-box",[div("macro-lbl",[m[0]]),div("macro-val",[m[1]])]));
+  });
+  body.appendChild(macros);
+  if(p.use) body.appendChild(div("card-use",[p.use]));
+  if(reds>0||yellows>0){
+    var badges=div("e-badges");
+    if(reds>0){ var rb=div("e-badge",["🔴 "+reds]); rb.style.background="#C0392B"; badges.appendChild(rb); }
+    if(yellows>0){ var yb=div("e-badge",["🟡 "+yellows]); yb.style.background="#D4A017"; badges.appendChild(yb); }
+    body.appendChild(badges);
+  }
+  card.appendChild(body);
+  return card;
+}
+
+// ══════════════════════════════════════════════════════════════════
+// RENDER PANELS
+// ══════════════════════════════════════════════════════════════════
+function renderGoalsPanel(){
+  var g=state.goalsDraft;
+  function upd(k,v){ var d=Object.assign({},state.goalsDraft); d[k]=v; setState({goalsDraft:d}); }
+  var actFactor=g.activityLevel==="hoog"?1.3:g.activityLevel==="matig"?1.15:1.0;
+  var baseP=g.goal==="spiermassa"?g.proteinActive:g.goal==="onderhoud"?g.proteinMin:(g.proteinMin+g.proteinMax)/2;
+  var effP=Math.round(baseP*actFactor);
+
+  var panel=div("panel");
+  panel.appendChild(div("panel-title",["⚙️ Mijn Doelen"]));
+  panel.appendChild(div("panel-sub",["Wordt gebruikt voor het persoonlijk advies per product."]));
+
+  // Gewicht
+  var wBox=div("section-box");
+  wBox.appendChild(div("section-title",["⚖️ Gewicht"]));
+  var wGrid=div("grid-2");
+  var wInp=makeInput("number","97",g.weight,function(v){ upd("weight",parseFloat(v)||0); },"inp-sm");
+  var twInp=makeInput("number","85",g.targetWeight,function(v){ upd("targetWeight",parseFloat(v)||0); },"inp-sm");
+  wGrid.appendChild(renderField("Huidig gewicht (kg)",wInp));
+  wGrid.appendChild(renderField("Doelgewicht (kg)",twInp));
+  wBox.appendChild(wGrid);
+  panel.appendChild(wBox);
+
+  // Eiwit
+  var pBox=div("section-box");
+  pBox.appendChild(div("section-title",["💪 Eiwitdoelen (g/dag)"]));
+  var pGrid=div("grid-3");
+  [["proteinMin","Minimum"],["proteinMax","Maximum"],["proteinActive","Actief"]].forEach(function(x){
+    var inp=makeInput("number","",g[x[0]],function(v){ upd(x[0],parseFloat(v)||0); },"inp-sm");
+    pGrid.appendChild(renderField(x[1],inp));
+  });
+  pBox.appendChild(pGrid);
+  panel.appendChild(pBox);
+
+  // Calorie & macro's
+  var cBox=div("section-box");
+  cBox.appendChild(div("section-title",["🔥 Calorie- & macrodoelen (/dag)"]));
+  var cGrid=div("grid-3");
+  [["kcalTarget","kcal"],["fatTarget","Vet (g)"],["carbTarget","Koolh. (g)"]].forEach(function(x){
+    var inp=makeInput("number","",g[x[0]],function(v){ upd(x[0],parseFloat(v)||0); },"inp-sm");
+    cGrid.appendChild(renderField(x[1],inp));
+  });
+  cBox.appendChild(cGrid);
+  cBox.appendChild(h("div",{className:"hint"},["💡 Snel berekenen: "+Math.round(g.weight*24)+" kcal × 0,80 = ca. "+Math.round(g.weight*24*0.8)+" kcal deficit."]));
+  panel.appendChild(cBox);
+
+  // Activiteit
+  var aBox=div("section-box");
+  aBox.appendChild(div("section-title",["🏃 Activiteitsniveau"]));
+  var aRow=div("btn-group",null,{style:{marginTop:0}});
+  [["laag","🪑 Laag","1×/week"],["matig","🚶 Matig","2–4×/week"],["hoog","🏃 Hoog","5×/week"]].forEach(function(x){
+    var b=h("button",{className:"goal-btn"+(g.activityLevel===x[0]?" active":"")},[ h("div",null,[x[1]]), h("div",{style:{fontSize:"9px",fontWeight:"400",color:"#5D7A8A"}},[x[2]]) ]);
+    b.addEventListener("click",function(){ upd("activityLevel",x[0]); });
+    aRow.appendChild(b);
+  });
+  aBox.appendChild(aRow);
+  aBox.appendChild(h("div",{className:"hint"},["Effectief eiwitdoel: ~"+effP+"g/dag op basis van activiteit."]));
+  panel.appendChild(aBox);
+
+  // Hoofddoel
+  var gBox=div("section-box");
+  gBox.appendChild(div("section-title",["🎯 Hoofddoel"]));
+  var gRow=div("btn-group",null,{style:{marginTop:0}});
+  [["afvallen","⬇️ Afvallen"],["spiermassa","💪 Spiermassa"],["onderhoud","⚖️ Onderhoud"]].forEach(function(x){
+    var b=h("button",{className:"goal-btn"+(g.goal===x[0]?" active":"")});
+    b.textContent=x[1];
+    b.addEventListener("click",function(){ upd("goal",x[0]); });
+    gRow.appendChild(b);
+  });
+  gBox.appendChild(gRow);
+  panel.appendChild(gBox);
+
+  // Maaltijden
+  var mBox=div("section-box");
+  mBox.appendChild(div("section-title",["🍽️ Maaltijden per dag"]));
+  var mRow=div("btn-group",null,{style:{marginTop:0}});
+  [3,4,5].forEach(function(n){
+    var b=h("button",{className:"meal-btn"+(g.mealsPerDay===n?" active":"")});
+    b.textContent=n+"×";
+    b.addEventListener("click",function(){ upd("mealsPerDay",n); });
+    mRow.appendChild(b);
+  });
+  mBox.appendChild(mRow);
+  panel.appendChild(mBox);
+
+  // Samenvatting
+  panel.appendChild(div("summary-box",[h("strong",null,["Samenvatting: "]),g.weight+"kg → "+g.targetWeight+"kg · "+g.proteinMin+"–"+g.proteinMax+"g eiwit/dag · "+g.kcalTarget+"kcal · "+g.fatTarget+"g vet · "+g.carbTarget+"g koolh. · "+g.activityLevel+" activiteit · "+g.goal]));
+
+  // Knoppen
+  var btnRow=div("btn-group");
+  var cancelBtn=btn("btn btn-secondary","Annuleren",function(){ setState({showGoals:false}); });
+  var saveBtn=btn("btn btn-primary","✓ Opslaan",saveGoals);
+  saveBtn.style.flex="1";
+  btnRow.appendChild(cancelBtn);
+  btnRow.appendChild(saveBtn);
+  panel.appendChild(btnRow);
+
+  // Back-up
+  var bu=div("divider");
+  bu.appendChild(h("div",{style:{fontSize:"13px",fontWeight:"700",color:"#0A2A4A",marginBottom:"4px"}},["💾 Back-up"]));
+  bu.appendChild(h("div",{style:{fontSize:"11px",color:"#5D7A8A",marginBottom:"12px",lineHeight:"1.5"}},["Sla je producten en instellingen op als bestand."]));
+  var buRow=div("btn-group",null,{style:{marginTop:0}});
+  var expBtn=btn("btn btn-mint","⬇️ Exporteren",exportData);
+  expBtn.style.flex="1";
+  var impBtn=btn("btn btn-mint","⬆️ Importeren",function(){ document.getElementById("import-file").click(); });
+  impBtn.style.flex="1";
+  var impInp=h("input",{type:"file",accept:"application/json,.json",id:"import-file",style:{display:"none"},onChange:importData});
+  buRow.appendChild(expBtn); buRow.appendChild(impBtn); buRow.appendChild(impInp);
+  bu.appendChild(buRow);
+  if(state.backupMsg){
+    var bm=div("backup-msg",[state.backupMsg]);
+    bm.style.color=state.backupMsg.startsWith("✓")?"#2E8B57":"#c0392b";
+    bu.appendChild(bm);
+  }
+  panel.appendChild(bu);
+  return panel;
+}
+
+function renderAddPanel(){
+  var f=state.form;
+  function upd(k,v){ var nf=Object.assign({},state.form); nf[k]=v; setState({form:nf}); }
+  var panel=div("panel");
+  panel.appendChild(div("panel-title",["➕ Product toevoegen"]));
+  panel.appendChild(div("panel-sub",["Voorkant voor overzicht · Etiket voor voedingswaarden"]));
+
+  // Barcode
+  var barcodeBtn=h("button",{className:"btn btn-primary",style:{marginBottom:"14px",display:"flex",alignItems:"center",justifyContent:"center",gap:"8px",fontSize:"15px"},onClick:openBarcodeScanner},["📷 Scan barcode"]);
+  panel.appendChild(barcodeBtn);
+  panel.appendChild(h("div",{style:{fontSize:"11px",color:"#5D7A8A",textAlign:"center",marginBottom:"16px",marginTop:"-6px"}},["Zoekt automatisch in Open Food Facts database"]));
+
+  // Photo slots
+  var photos=div("photo-slots");
+  photos.appendChild(renderPhotoSlot(state.imgFront,function(e){ handlePhoto(e,"front"); },"📦","Voorkant","Zichtbaar in overzicht"));
+  photos.appendChild(renderPhotoSlot(state.imgLabel,function(e){ handlePhoto(e,"label"); },"🏷️","Etiket","Achterkant verpakking"));
+  panel.appendChild(photos);
+
+  if(state.scanDone) panel.appendChild(div("scan-ok",["✅ Automatisch ingevuld — controleer en pas aan waar nodig."]));
+  if(state.scanError) panel.appendChild(div("scan-err",["⚠️ "+state.scanError]));
+
+  // Fields
+  [["Productnaam *","name","text","bijv. Tine Konsentrert Yoghurt"],["Merk","brand","text","bijv. Tine"],["Gebruik","use","text","bijv. Ontbijt met noten & zaden"]].forEach(function(x){
+    var inp=makeInput(x[2],x[3],f[x[1]]||"",function(v){ upd(x[1],v); });
+    panel.appendChild(renderField(x[0],inp));
+  });
+  panel.appendChild(renderField("Categorie",makeSelect(Object.entries(CAT_LABELS),f.cat||"zuivel",function(v){ upd("cat",v); })));
+  panel.appendChild(h("div",{className:"field-label",style:{marginBottom:"6px",marginTop:"4px"}},["Voedingswaarden per 100g"]));
+  var macGrid=div("grid-3");
+  [["Eiwit (g)","protein"],["Vet (g)","fat"],["Koolh. (g)","carb"],["Suiker (g)","sugar"],["kcal","kcal"]].forEach(function(x){
+    var inp=makeInput("number","0",f[x[1]]!=null?f[x[1]]:"",function(v){ upd(x[1],v); },"inp-sm");
+    macGrid.appendChild(renderField(x[0],inp));
+  });
+  panel.appendChild(macGrid);
+  var noteInp=makeInput("text","bijv. Laktosevrij...",f.note||"",function(v){ upd("note",v); });
+  panel.appendChild(renderField("Notitie",noteInp));
+  var enInp=makeInput("text","bijv. E330, E385",f.enumbers||"",function(v){ upd("enumbers",v); });
+  panel.appendChild(renderField("E-nummers",enInp));
+  var etags=renderETags(f.enumbers||"");
+  if(etags) panel.appendChild(etags);
+
+  var btnRow=div("btn-group");
+  var cancelBtn=btn("btn btn-secondary","Annuleren",function(){ setState({showAdd:false}); });
+  var saveBtn=h("button",{className:"btn btn-primary",style:{flex:"1"},disabled:!f.name,onClick:addProduct},["✓ Opslaan"]);
+  btnRow.appendChild(cancelBtn); btnRow.appendChild(saveBtn);
+  panel.appendChild(btnRow);
+  return panel;
+}
+
+function renderEditPanel(){
+  var f=state.editForm;
+  function upd(k,v){ var nf=Object.assign({},state.editForm); nf[k]=v; setState({editForm:nf}); }
+  var panel=div("panel");
+  panel.appendChild(div("panel-title",["✏️ Product bewerken"]));
+  panel.appendChild(div("panel-sub",["Vervang foto's of pas gegevens aan."]));
+  var photos=div("photo-slots");
+  photos.appendChild(renderPhotoSlot(state.editImgFront,function(e){ handleEditPhoto(e,"front"); },"📦","Voorkant","Tik om te vervangen"));
+  photos.appendChild(renderPhotoSlot(state.editImgLabel,function(e){ handleEditPhoto(e,"label"); },"🏷️","Etiket","Tik om te vervangen"));
+  panel.appendChild(photos);
+  [["Productnaam *","name","text",""],["Merk","brand","text",""],["Gebruik","use","text",""]].forEach(function(x){
+    var inp=makeInput(x[2],x[3],f[x[1]]||"",function(v){ upd(x[1],v); });
+    panel.appendChild(renderField(x[0],inp));
+  });
+  panel.appendChild(renderField("Categorie",makeSelect(Object.entries(CAT_LABELS),f.cat||"overig",function(v){ upd("cat",v); })));
+  panel.appendChild(h("div",{className:"field-label",style:{marginBottom:"6px",marginTop:"4px"}},["Voedingswaarden per 100g"]));
+  var macGrid=div("grid-3");
+  [["Eiwit (g)","protein"],["Vet (g)","fat"],["Koolh. (g)","carb"],["Suiker (g)","sugar"],["kcal","kcal"]].forEach(function(x){
+    var inp=makeInput("number","",f[x[1]]!=null?f[x[1]]:"",function(v){ upd(x[1],v); },"inp-sm");
+    macGrid.appendChild(renderField(x[0],inp));
+  });
+  panel.appendChild(macGrid);
+  panel.appendChild(renderField("Notitie",makeInput("text","",f.note||"",function(v){ upd("note",v); })));
+  var enInp=makeInput("text","bijv. E330, E385",f.enumbers||"",function(v){ upd("enumbers",v); });
+  panel.appendChild(renderField("E-nummers",enInp));
+  var etags=renderETags(f.enumbers||"");
+  if(etags) panel.appendChild(etags);
+  var btnRow=div("btn-group");
+  btnRow.appendChild(btn("btn btn-secondary","Annuleren",function(){ setState({showEdit:false}); }));
+  var sb=h("button",{className:"btn btn-primary",style:{flex:"1"},disabled:!f.name,onClick:saveEdit},["✓ Opslaan"]);
+  btnRow.appendChild(sb);
+  panel.appendChild(btnRow);
+  return panel;
+}
+
+function renderDetailPanel(){
+  var p=state.detail, advice=state.detailAdvice||[];
+  var panel=div("panel",null,{style:{maxWidth:"420px"}});
+  if(p.imgFront||p.imgLabel){
+    var img=h("img",{src:p.imgFront||p.imgLabel,className:"detail-hero"});
+    img.addEventListener("click",function(){ setState({lightbox:p.imgFront||p.imgLabel}); });
+    panel.appendChild(img);
+  } else {
+    panel.appendChild(h("div",{style:{textAlign:"center",fontSize:"52px",marginBottom:"12px"}},[p.emoji||"🫙"]));
+  }
+  panel.appendChild(div("detail-cat",[CAT_LABELS[p.cat]+(p.brand?" · "+p.brand:"")]));
+  panel.appendChild(div("detail-name",[p.name]));
+  var protBadge=div("detail-prot-badge",[p.protein+"g eiwit per 100g"]);
+  protBadge.style.background=protColor(p.protein);
+  panel.appendChild(protBadge);
+  var macGrid=div("macro-grid");
+  [["Eiwit",p.protein+"g","#0A2A4A"],["Vet",p.fat+"g","#1E1E1E"],["Koolh.",p.carb+"g","#1E1E1E"],["kcal",p.kcal,"#1E1E1E"]].forEach(function(m){
+    var cell=div("macro-cell");
+    var val=div("macro-cell-val",[m[1]]); val.style.color=m[2];
+    cell.appendChild(val); cell.appendChild(div("macro-cell-lbl",[m[0]]));
+    macGrid.appendChild(cell);
+  });
+  panel.appendChild(macGrid);
+  if(p.imgLabel){
+    var lblWrap=h("div",{style:{marginBottom:"12px"}});
+    var lblImg=h("img",{src:p.imgLabel,style:{width:"100%",maxHeight:"200px",objectFit:"contain",borderRadius:"8px",border:"1px solid #C8DCE8",display:"block",background:"#f9f9f9",cursor:"zoom-in"}});
+    lblImg.addEventListener("click",function(){ setState({lightbox:p.imgLabel}); });
+    lblWrap.appendChild(lblImg);
+    panel.appendChild(lblWrap);
+  }
+  if(p.use) panel.appendChild(h("div",{style:{background:"#EAF4FB",borderRadius:"7px",padding:"8px 11px",fontSize:"12px",color:"#0A2A4A",marginBottom:"8px"}},["📍 "+p.use]));
+  if(p.note) panel.appendChild(h("div",{style:{fontSize:"11px",color:"#5D7A8A",fontStyle:"italic",lineHeight:"1.5",marginBottom:"10px"}},["💬 "+p.note]));
+
+  // E-nummers
+  var ens=parseENumbers(p.enumbers||"");
+  if(ens.length){
+    var reds=ens.filter(function(e){ return e.rating==="red"; });
+    var yellows=ens.filter(function(e){ return e.rating==="yellow"; });
+    var summary=reds.length>0?{color:"#C0392B",icon:"🔴",text:reds.length+" toevoeging"+(reds.length>1?"en":"")+" om te vermijden"}:yellows.length>0?{color:"#D4A017",icon:"🟡",text:yellows.length+" toevoeging"+(yellows.length>1?"en":"")+" om te beperken"}:{color:"#2E8B57",icon:"🟢",text:"Alle toevoegingen veilig"};
+    var eBlock=div("e-block");
+    eBlock.style.border="1.5px solid "+summary.color;
+    eBlock.style.background=summary.color+"0D";
+    var sumRow=h("div",{style:{display:"flex",alignItems:"center",gap:"6px",marginBottom:"8px"}},[h("span",null,[summary.icon]),h("span",{style:{fontSize:"12px",fontWeight:"700",color:summary.color}},["E-nummers: "+summary.text])]);
+    eBlock.appendChild(sumRow);
+    ens.forEach(function(en){
+      var row=div("e-row",[
+        h("span",{className:"e-dot",style:{background:eColor(en.rating)}}),
+        h("div",{style:{flex:"1"}},[
+          div("e-name",[h("strong",{style:{color:eColor(en.rating)}},[en.code])," · "+en.name,h("span",{style:{color:eColor(en.rating),fontSize:"10px",fontWeight:"600",marginLeft:"6px"}},[eLabel(en.rating)])]),
+          div("e-desc",[en.desc])
+        ])
+      ]);
+      eBlock.appendChild(row);
+    });
+    panel.appendChild(eBlock);
+  }
+
+  // Advies
+  if(advice.length){
+    var advBox=div("advice-box");
+    advBox.appendChild(div("advice-title",["💡 Persoonlijk advies"]));
+    advice.forEach(function(line){
+      var cls="advice-line"+(line.startsWith("⚠️")||line.startsWith("❌")||line.startsWith("🍬")?" advice-warn":line.startsWith("✅")||line.startsWith("👍")||line.startsWith("💪")?" advice-good":"");
+      advBox.appendChild(div(cls,[line]));
+    });
+    panel.appendChild(advBox);
+  }
+
+  var btnRow=div("btn-group");
+  btnRow.appendChild(h("button",{className:"btn btn-secondary",style:{flex:"1"},onClick:function(){ setState({detail:null,detailAdvice:[]}); }},["Sluiten"]));
+  btnRow.appendChild(h("button",{className:"btn btn-mint",onClick:function(){ openEdit(p); }},["✏️"]));
+  btnRow.appendChild(h("button",{className:"btn btn-danger",onClick:function(){ if(confirm("Product verwijderen?")) deleteProduct(p.id); }},["🗑"]));
+  panel.appendChild(btnRow);
+  return panel;
+}
+
+function renderSnackPanel(){
+  var sr=state.snackResult;
+  var panel=div("panel-bottom");
+  if(sr.error){
+    panel.appendChild(div("snack-title",["🍎 Snack suggestie"]));
+    panel.appendChild(h("div",{style:{fontSize:"13px",color:"#5D7A8A",lineHeight:"1.6"}},[sr.error]));
+    panel.appendChild(h("button",{className:"btn btn-secondary",style:{width:"100%",marginTop:"16px"},onClick:function(){ setState({snackOpen:false}); }},["Sluiten"]));
+    return panel;
+  }
+  var p=sr.pick;
+  var topRow=div("snack-timeslot",[
+    div("snack-timeslot-label",["🕐 "+sr.slotLabel+" · "+sr.hour+":00 uur"]),
+    h("button",{className:"snack-close",onClick:function(){ setState({snackOpen:false}); }},["✕"])
+  ]);
+  panel.appendChild(topRow);
+  panel.appendChild(div("snack-title",["Aanbevolen snack"]));
+  var card=div("snack-card");
+  if(p.imgFront) card.appendChild(h("img",{src:p.imgFront,className:"snack-card-img"}));
+  var cardBody=div("snack-card-body");
+  cardBody.appendChild(div("snack-card-cat",[CAT_LABELS[p.cat]||p.cat]));
+  cardBody.appendChild(div("snack-card-name",[p.name]));
+  if(p.brand) cardBody.appendChild(div("snack-card-brand",[p.brand]));
+  var portieBox=div("snack-portie",[
+    div("snack-portie-gram",[sr.portie+"g"]),
+    h("div",null,[
+      sr.portieProt!=null?div("snack-portie-prot",["→ "+sr.portieProt+"g eiwit"]):"",
+      sr.portieKcal!=null?div("snack-portie-kcal",["→ "+sr.portieKcal+" kcal"]):"",
+      div("snack-portie-budget",["Budget: "+sr.snackKcalBudget+" kcal / "+sr.snackProteinTarget+"g eiwit"])
+    ])
+  ]);
+  cardBody.appendChild(portieBox);
+  cardBody.appendChild(div("snack-reason",["💡 "+sr.fitMsg]));
+  card.appendChild(cardBody);
+  panel.appendChild(card);
+  var alts=sr.top.filter(function(a){ return a.id!==p.id; });
+  if(alts.length){
+    panel.appendChild(div("alt-title",["Ook geschikt:"]));
+    alts.forEach(function(alt){
+      var item=div("alt-item");
+      item.addEventListener("click",function(){ pickAlt(alt); });
+      if(alt.imgFront) item.appendChild(h("img",{src:alt.imgFront,className:"alt-img"}));
+      else item.appendChild(div("alt-emoji",[alt.emoji||"🫙"]));
+      item.appendChild(h("div",null,[div("alt-name",[alt.name]),div("alt-sub",[alt.protein+"g eiwit/100g · Tik om te kiezen"])]));
+      panel.appendChild(item);
+    });
+  }
+  var btnRow=div("btn-group");
+  btnRow.appendChild(h("button",{className:"btn btn-mint",style:{flex:"1"},onClick:doSnack},["🔄 Andere suggestie"]));
+  btnRow.appendChild(h("button",{className:"btn btn-primary",style:{flex:"1"},onClick:function(){ setState({snackOpen:false}); }},["✓ Klaar"]));
+  panel.appendChild(btnRow);
+  return panel;
+}
+
+// ══════════════════════════════════════════════════════════════════
+// MAIN RENDER
+// ══════════════════════════════════════════════════════════════════
+function render(){
+  var app=document.getElementById("app");
+  app.innerHTML="";
+  var s=state;
+
+  if(!s.loaded){
+    app.appendChild(h("div",{style:{display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"center",height:"100vh",color:"#5D7A8A",gap:"12px"}},["🌿","Catalogus laden..."]));
+    return;
+  }
+
+  // ── BARCODE OVERLAY ──
+  if(s.barcodeOpen){
+    var bo=div("barcode-overlay");
+    bo.appendChild(h("div",{style:{color:"#fff",fontSize:"16px",fontWeight:"700",marginBottom:"16px"}},["📷 Scan de streepjescode"]));
+    bo.appendChild(h("div",{id:"barcode-reader"}));
+    if(s.barcodeStatus) bo.appendChild(div("barcode-status",[s.barcodeStatus]));
+    bo.appendChild(h("button",{className:"btn",style:{marginTop:"20px",padding:"11px 28px",border:"1.5px solid #fff",borderRadius:"10px",background:"transparent",color:"#fff"},onClick:closeBarcodeScanner},["Annuleren"]));
+    app.appendChild(bo);
+    return;
+  }
+
+  // ── LIGHTBOX ──
+  if(s.lightbox){
+    var lb=div("lightbox");
+    lb.addEventListener("click",function(){ setState({lightbox:null}); });
+    lb.appendChild(h("img",{src:s.lightbox}));
+    lb.appendChild(div("lightbox-close",["✕"]));
+    app.appendChild(lb);
+  }
+
+  // ── HEADER ──
+  var header=div("header",[
+    h("div",null,[
+      div("header-title",["🌿 Mijn Voedselcatalogus"]),
+      div("header-sub",["Eiwitten & E-nummers inzichtelijk"])
+    ]),
+    h("button",{className:"btn",style:{background:"rgba(255,255,255,.15)",border:"none",color:"#fff",fontSize:"12px"},onClick:function(){ setState({showGoals:true,goalsDraft:Object.assign({},s.goals)}); }},["⚙️ Doelen"])
+  ]);
+  app.appendChild(header);
+
+  // ── STATS BAR ──
+  var avgProt=s.products.length?(s.products.reduce(function(a,p){ return a+p.protein; },0)/s.products.length).toFixed(1):0;
+  var topProt=s.products.length?s.products.slice().sort(function(a,b){ return b.protein-a.protein; })[0]:null;
+  var sb=div("stats-bar");
+  [
+    [s.goals.proteinMin+"–"+s.goals.proteinMax+"g","Eiwitdoel/dag"],
+    [s.goals.weight+"→"+s.goals.targetWeight+"kg","Gewicht / doel"],
+    [avgProt+"g","Gem. eiwit/100g"],
+    [topProt?topProt.name.split(" ").slice(0,2).join(" "):"-","⭐ Meest eiwit"]
+  ].forEach(function(item,i){
+    var stat=div("stat",[
+      h("div",{className:"stat-num"+(i===3?" small":"")},[item[0]]),
+      div("stat-lbl",[item[1]])
+    ]);
+    sb.appendChild(stat);
+  });
+  app.appendChild(sb);
+
+  if(s.saveErr) app.appendChild(div("save-err",[s.saveErr]));
+
+  // ── FILTER BAR ──
+  var fb=div("filter-bar");
+  [["all","Alles"],["zuivel","🥛 Zuivel"],["eiwit","💪 Eiwitbron"],["broodbeleg","🥪 Broodbeleg"],["groenten","🥦 Groenten"],["granen","🌾 Granen"],["overig","🫙 Overig"]].forEach(function(f){
+    var b=h("button",{className:"filter-btn"+(s.filter===f[0]?" active":""),onClick:function(){ setState({filter:f[0]}); }},[f[1]]);
+    fb.appendChild(b);
+  });
+  var searchInp=h("input",{id:"search-input",placeholder:"🔍 Zoeken...",value:s.search||""});
+  searchInp.addEventListener("input",function(){ setState({search:searchInp.value}); });
+  fb.appendChild(searchInp);
+  app.appendChild(fb);
+
+  // ── PRODUCT GRID ──
+  var q=(s.search||"").toLowerCase();
+  var filtered=s.products.filter(function(p){
+    var matchCat=s.filter==="all"||p.cat===s.filter;
+    return matchCat&&(!q||p.name.toLowerCase().indexOf(q)>=0||(p.brand||"").toLowerCase().indexOf(q)>=0);
+  });
+  var grid=div("grid");
+  filtered.forEach(function(p){ grid.appendChild(renderProductCard(p)); });
+  var addCard=div("add-card",["➕","Product toevoegen"]);
+  addCard.addEventListener("click",function(){ setState({showAdd:true,form:{cat:"zuivel"},imgFront:null,imgLabel:null,scanDone:false,scanError:""}); });
+  grid.appendChild(addCard);
+  app.appendChild(grid);
+
+  // ── FLOATING BUTTON ──
+  var fab=h("button",{className:"fab",onClick:doSnack},["🍎 Stel snack voor"]);
+  app.appendChild(fab);
+
+  // ── OVERLAYS ──
+  function makeOverlay(panelEl,bottom){
+    var ov=div(bottom?"overlay bottom":"overlay");
+    ov.addEventListener("click",function(e){ if(e.target===ov) closeAll(); });
+    ov.appendChild(panelEl);
+    return ov;
+  }
+  function closeAll(){
+    setState({showGoals:false,showAdd:false,showEdit:false,detail:null,detailAdvice:[],snackOpen:false});
+  }
+
+  if(s.showGoals) app.appendChild(makeOverlay(renderGoalsPanel(),false));
+  if(s.showAdd)   app.appendChild(makeOverlay(renderAddPanel(),false));
+  if(s.showEdit)  app.appendChild(makeOverlay(renderEditPanel(),false));
+  if(s.detail)    app.appendChild(makeOverlay(renderDetailPanel(),false));
+  if(s.snackOpen&&s.snackResult) app.appendChild(makeOverlay(renderSnackPanel(),true));
+}
+
+// ── BARCODE LIB (non-blocking) ──
+(function(){
   var s=document.createElement("script");
   s.src="https://cdn.jsdelivr.net/npm/html5-qrcode@2.3.8/html5-qrcode.min.js";
-  s.onerror=function(){ window.__barcodeUnavailable=true; };
   document.head.appendChild(s);
 })();
 
-(function waitReact(tries){
-  if(typeof React!=="undefined"&&typeof ReactDOM!=="undefined"){ startApp(); }
-  else if(tries>0){ setTimeout(function(){ waitReact(tries-1); },100); }
-  else { showError("React laadt niet. Controleer je internetverbinding en herlaad de pagina."); }
-})(50);
+render();
 </script>
 </body>
 </html>
